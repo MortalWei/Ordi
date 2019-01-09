@@ -1,5 +1,8 @@
 ﻿namespace Ordi.Entities
 {
+    /// <summary>
+    /// 枚举转换对象
+    /// </summary>
     public class EnumObject
     {
         /// <summary>

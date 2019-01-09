@@ -80,6 +80,9 @@
     <Reference Include="DevExpress.XtraBars.v16.2" />
     <Reference Include="DevExpress.Sparkline.v16.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v16.2" />
+    <Reference Include="DevExpress.XtraGrid.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraLayout.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v16.2, Version=16.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.Async.1.0.168\lib\net40\Microsoft.Threading.Tasks.dll</HintPath>
     </Reference>
@@ -121,6 +124,13 @@
     <Compile Include="FmMenu.Designer.cs">
       <DependentUpon>FmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FmTest2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmTest2.Designer.cs">
+      <DependentUpon>FmTest2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Launcher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FmLogin.cs">
@@ -129,8 +139,20 @@
     <Compile Include="FmLogin.Designer.cs">
       <DependentUpon>FmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FmTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmTest.Designer.cs">
+      <DependentUpon>FmTest.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FmMenu.resx">
       <DependentUpon>FmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmTest.resx">
+      <DependentUpon>FmTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FmTest2.resx">
+      <DependentUpon>FmTest2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

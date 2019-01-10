@@ -3,7 +3,7 @@
     /// <summary>
     /// 枚举转换对象
     /// </summary>
-    public class EnumObject
+    public sealed class EnumObject
     {
         /// <summary>
         /// Enum-Value

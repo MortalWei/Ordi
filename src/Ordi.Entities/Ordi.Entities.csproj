@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,8 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\AppModel.cs" />
+    <Compile Include="Entities\MenuModel.cs" />
+    <Compile Include="Enums\AppSpecies.cs" />
     <Compile Include="Enums\InputCode.cs" />
     <Compile Include="Entities\EnumObject.cs" />
+    <Compile Include="Enums\KeyState.cs" />
+    <Compile Include="Enums\MenuSpecies.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

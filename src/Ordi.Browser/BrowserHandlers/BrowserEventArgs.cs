@@ -1,4 +1,4 @@
-﻿using Ordi.Status;
+﻿using Ordi.Enums;
 using System;
 
 namespace Ordi.Browser.BrowserHandlers

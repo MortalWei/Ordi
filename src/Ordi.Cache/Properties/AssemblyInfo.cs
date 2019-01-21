@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // 有关程序集的一般信息由以下
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("Ordi.Entities")]
+[assembly: AssemblyTitle("Ordi.Cache")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Ordi.Entities")]
+[assembly: AssemblyProduct("Ordi.Cache")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("d7d4dd61-8187-4b44-867d-e3d7f57953e3")]
+[assembly: Guid("3e4dc915-9435-422f-a15b-f6c9b1b11aa3")]
 
 // 程序集的版本信息由下列四个值组成: 
 //

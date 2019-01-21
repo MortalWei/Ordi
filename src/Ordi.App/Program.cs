@@ -1,13 +1,12 @@
-﻿//using CefSharp;
-using DevExpress.LookAndFeel;
+﻿using DevExpress.LookAndFeel;
 using DevExpress.Skins;
 using DevExpress.UserSkins;
+using Ordi.App.Behavior;
 using Ordi.Browser.Settings;
 using System;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 
 namespace Ordi.App
@@ -48,11 +47,13 @@ namespace Ordi.App
             FmLogin fm = new FmLogin();
             if (fm.ShowDialog() == DialogResult.OK)
             {
-                Application.Run(new FmMenu());
+                MenuBehavior.InitializeLocal();
+                Application.Run(new FmMain());
             }
             else
             {
-                Application.Run(new FmMenu());
+                MenuBehavior.InitializeLocal();
+                Application.Run(new FmMain());
             }
             #endregion Login
 
@@ -83,7 +84,7 @@ namespace Ordi.App
             //加载CefSharp相关库
             if (args.Name.StartsWith("CefSharp"))
             {
-                string assemblyPath = Path.Combine(Application.StartupPath, CefSettingClass.CefLibName, assemblyAllName);
+                string assemblyPath = Path.Combine(Application.StartupPath, CefSettingClass.LibraryName, CefSettingClass.CefLibName, assemblyAllName);
                 return File.Exists(assemblyPath) ? Assembly.LoadFile(assemblyPath) : null;
             }
 

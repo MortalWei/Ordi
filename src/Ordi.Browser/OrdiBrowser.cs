@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using CefSharp.WinForms;
 using CefSharp;
+using Ordi.Enums;
 
 namespace Ordi.Browser
 {
@@ -122,7 +123,7 @@ namespace Ordi.Browser
         {
             var EventArgs = new BrowserHandlers.BrowserEventArgs(args1, args2, args3);
             JsCallNetExecute?.Invoke(this, EventArgs);
-            return EventArgs?.State == Status.OrdiEventState.Succeed ? EventArgs.Result : string.Empty;
+            return EventArgs?.State == OrdiEventState.Succeed ? EventArgs.Result : string.Empty;
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Ordi.Browser
         {
             var EventArgs = new BrowserHandlers.BrowserEventArgs(args1, args2, args3);
             JsCallNetExecute?.Invoke(this, EventArgs);
-            return EventArgs?.State == Status.OrdiEventState.Succeed ? EventArgs.Result : string.Empty;
+            return EventArgs?.State == OrdiEventState.Succeed ? EventArgs.Result : string.Empty;
         }
 
         /// <summary>
@@ -170,20 +171,10 @@ namespace Ordi.Browser
 
         /// <summary>
         /// 刷新
+        /// 重新加载当前界面
         /// </summary>
-        public void Reload()
-        {
-            if (IsInitialize)
-                Browser?.Reload();
-            else
-                LoadCefSharp();
-        }
-
-        /// <summary>
-        /// 刷新
-        /// </summary>
-        /// <param name="ignoreCache"></param>
-        public void Reload(bool ignoreCache)
+        /// <param name="ignoreCache">忽略缓存</param>
+        public void Reload(bool ignoreCache = false)
         {
             if (IsInitialize)
                 Browser?.Reload(ignoreCache);
@@ -193,6 +184,7 @@ namespace Ordi.Browser
 
         /// <summary>
         /// 刷新
+        /// 重新加载指定URI页面
         /// </summary>
         /// <param name="uri"></param>
         public void Reload(Uri uri)
@@ -202,6 +194,7 @@ namespace Ordi.Browser
 
         /// <summary>
         /// 刷新
+        /// 重新加载指定URL页面
         /// </summary>
         /// <param name="url"></param>
         public void Reload(string url)

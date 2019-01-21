@@ -6,6 +6,7 @@ namespace Ordi.Browser.Settings
 {
     public class CefSettingClass
     {
+        public const string LibraryName = "Library";
         public const string CefLibName = "CefSharp";
         public const string LocalesName = "locales";
         public const string LogsName = "CefSharp.log";
@@ -15,9 +16,9 @@ namespace Ordi.Browser.Settings
         /// </summary>
         public static void InitializeCefSetting()
         {
-            var browser = Path.Combine(Application.StartupPath, CefLibName, "CefSharp.BrowserSubprocess.exe");
-            var locales = Path.Combine(Application.StartupPath, CefLibName, LocalesName);
-            var res = Path.Combine(Application.StartupPath, CefLibName);
+            var browser = Path.Combine(Application.StartupPath, LibraryName, CefLibName, "CefSharp.BrowserSubprocess.exe");
+            var locales = Path.Combine(Application.StartupPath, LibraryName, CefLibName, LocalesName);
+            var res = Path.Combine(Application.StartupPath, LibraryName, CefLibName);
             var logs = Path.Combine(Application.StartupPath, LogsName);
 
             CefSettings settings = new CefSettings

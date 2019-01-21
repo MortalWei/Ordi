@@ -33,6 +33,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,18 +41,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\MenuAttribute.cs" />
+    <Compile Include="Data\PubVar.cs" />
+    <Compile Include="Entities\AppModel.cs" />
+    <Compile Include="Entities\EnumObject.cs" />
+    <Compile Include="Entities\MenuModel.cs" />
+    <Compile Include="Enums\AppSpecies.cs" />
+    <Compile Include="Enums\InputCode.cs" />
+    <Compile Include="Enums\KeyState.cs" />
+    <Compile Include="Enums\MenuSpecies.cs" />
+    <Compile Include="Enums\MenuState.cs" />
+    <Compile Include="Enums\OrdiEventState.cs" />
     <Compile Include="Extensions\BooleanExtension.cs" />
     <Compile Include="Extensions\EnumExtension.cs" />
     <Compile Include="Extensions\NumberExtension.cs" />
+    <Compile Include="ILoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Status\OrdiEventState.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Ordi.Entities\Ordi.Entities.csproj">
-      <Project>{d7d4dd61-8187-4b44-867d-e3d7f57953e3}</Project>
-      <Name>Ordi.Entities</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>copy $(TargetPath) $(SolutionDir)Ordi</PostBuildEvent>

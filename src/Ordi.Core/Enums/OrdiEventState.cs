@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Ordi.Status
+namespace Ordi.Enums
 {
     public enum OrdiEventState
     {

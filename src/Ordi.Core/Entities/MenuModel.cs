@@ -17,6 +17,11 @@ namespace Ordi.Entities
         [DataMember]
         public string Id { get; set; }
         /// <summary>
+        /// 父级菜单Id
+        /// </summary>
+        [DataMember]
+        public string ParentId { get; set; }
+        /// <summary>
         /// 菜单名称
         /// </summary>
         [DataMember]
@@ -30,7 +35,7 @@ namespace Ordi.Entities
         /// 菜单简介
         /// </summary>
         [DataMember]
-        public string About { get; set; }
+        public string Description { get; set; }
         /// <summary>
         /// 菜单种类
         /// </summary>
@@ -57,5 +62,10 @@ namespace Ordi.Entities
         /// </summary>
         [DataMember]
         public string ClassName { get; set; }
+        /// <summary>
+        /// 菜单状态
+        /// </summary>
+        [DataMember]
+        public MenuState State { get; set; }
     }
 }

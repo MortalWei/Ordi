@@ -5,6 +5,7 @@ using System.Linq;
 using Ordi.Attributes;
 using System;
 using Ordi.Entities;
+using Ordi.Windows;
 
 namespace Ordi.App
 {
@@ -44,6 +45,17 @@ namespace Ordi.App
 
             //var _List2 = System.IO.Directory.GetFiles(Application.StartupPath, "Ordi.*.dll");
             //var files = Directory.GetFiles("C:\\path", "*.*", SearchOption.AllDirectories).Where(s => s.EndsWith(".bmp") || s.EndsWith(".jpg"));
+        }
+
+        private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            //NoneForm form = new NoneForm()
+            //{
+            //    Text = "测试对话框"
+            //};
+            //form.ShowDialog();
+            Form1 fm = new Form1();
+            fm.ShowDialog();
         }
     }
 }

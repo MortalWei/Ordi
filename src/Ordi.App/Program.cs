@@ -48,12 +48,12 @@ namespace Ordi.App
             if (fm.ShowDialog() == DialogResult.OK)
             {
                 MenuBehavior.InitializeLocal();
-                Application.Run(new FmMain());
+                Application.Run(new Form2());
             }
             else
             {
                 MenuBehavior.InitializeLocal();
-                Application.Run(new FmMain());
+                Application.Run(new Form2());
             }
             #endregion Login
 

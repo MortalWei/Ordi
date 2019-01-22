@@ -138,6 +138,18 @@
     <Compile Include="FmTest2.Designer.cs">
       <DependentUpon>FmTest2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Launcher.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -164,6 +176,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FmTest2.resx">
       <DependentUpon>FmTest2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -202,6 +220,10 @@
     <ProjectReference Include="..\Ordi.Logger\Ordi.Logger.csproj">
       <Project>{bdb3d911-2efc-46f2-abfd-0ccdc703ed07}</Project>
       <Name>Ordi.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ordi.Windows\Ordi.Windows.csproj">
+      <Project>{11a02bbb-561d-4cce-89c4-0b93c6d63c8b}</Project>
+      <Name>Ordi.Windows</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

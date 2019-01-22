@@ -1,5 +1,6 @@
 ﻿using DevExpress.XtraBars.Ribbon;
 using System;
+using System.Reflection;
 
 namespace Ordi.App
 {
@@ -22,37 +23,37 @@ namespace Ordi.App
 
             InitializeMenus();
 
-            //FmTest fm = new FmTest();
+            FmTest fm = new FmTest();
 
-            //RibbonPage _RibbonPage = new RibbonPage(fm.Text);//创建一个新RibbonPage 
+            RibbonPage _RibbonPage = new RibbonPage(fm.Text);//创建一个新RibbonPage 
 
-            //FieldInfo[] fi = fm.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance);
+            FieldInfo[] fi = fm.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance);
 
-            //foreach (FieldInfo pFieldInfo in fi)
-            //{
-            //    if (pFieldInfo.FieldType.Equals(typeof(RibbonControl)))
-            //    {
-            //        try
-            //        {
-            //            RibbonControl ribbon = pFieldInfo.GetValue(fm) as RibbonControl;
-            //            ribbon.Toolbar.ShowCustomizeItem = false;
-            //            ribbon.ShowToolbarCustomizeItem = false;
-            //            _RibbonPage = ribbon.Pages[0];
-            //            _RibbonPage.Text = fm.Text;
+            foreach (FieldInfo pFieldInfo in fi)
+            {
+                if (pFieldInfo.FieldType.Equals(typeof(RibbonControl)))
+                {
+                    try
+                    {
+                        RibbonControl ribbon = pFieldInfo.GetValue(fm) as RibbonControl;
+                        ribbon.Toolbar.ShowCustomizeItem = false;
+                        ribbon.ShowToolbarCustomizeItem = false;
+                        _RibbonPage = ribbon.Pages[0];
+                        _RibbonPage.Text = fm.Text;
 
-            //            this.rbcMain.Pages.Add(_RibbonPage);
-            //        }
-            //        catch (Exception ex)
-            //        { throw ex; }
-            //    }
-            //}
+                        this.rbcMain.Pages.Add(_RibbonPage);
+                    }
+                    catch (Exception ex)
+                    { throw ex; }
+                }
+            }
 
-            //rbcMain.SelectedPage = _RibbonPage;
-            //fm.TopLevel = false;
-            //fm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //fm.Dock = System.Windows.Forms.DockStyle.Fill;
-            //fm.Parent = this;
-            //fm.Show();
+            rbcMain.SelectedPage = _RibbonPage;
+            fm.TopLevel = false;
+            fm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            fm.Dock = System.Windows.Forms.DockStyle.Fill;
+            fm.Parent = this;
+            fm.Show();
         }
 
         /// <summary>

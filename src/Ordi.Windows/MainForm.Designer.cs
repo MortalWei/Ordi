@@ -2,10 +2,6 @@
 {
     partial class MainForm
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
-        public System.ComponentModel.IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -28,24 +24,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.img16 = new DevExpress.Utils.ImageCollection();
-            this.img32 = new DevExpress.Utils.ImageCollection();
-            ((System.ComponentModel.ISupportInitialize)(this.img16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img32)).BeginInit();
+            this.components = new System.ComponentModel.Container();
+            this.TrDormancy = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // img16
+            // TrDormancy
             // 
-            this.img16.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img16.ImageStream")));
-            this.img16.Images.SetKeyName(0, "logo.png");
-            this.img16.Images.SetKeyName(1, "maximize.png");
-            this.img16.Images.SetKeyName(2, "minimize.png");
-            this.img16.Images.SetKeyName(3, "restore.png");
-            // 
-            // img32
-            // 
-            this.img32.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("img32.ImageStream")));
+            this.TrDormancy.Interval = 1000;
+            this.TrDormancy.Tick += new System.EventHandler(this.TrDormancy_Tick);
             // 
             // MainForm
             // 
@@ -55,15 +41,12 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MainForm";
             this.Text = "MainForm";
-            ((System.ComponentModel.ISupportInitialize)(this.img16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.img32)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private DevExpress.Utils.ImageCollection img32;
-        private DevExpress.Utils.ImageCollection img16;
+        private System.ComponentModel.IContainer components;
+        private System.Windows.Forms.Timer TrDormancy;
     }
 }

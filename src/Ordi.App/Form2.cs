@@ -12,7 +12,6 @@ namespace Ordi.App
 {
     public partial class Form2 : MainForm
     {
-        //private System.Timers.Timer Timer = new System.Timers.Timer();
         private int TimerCount = 0;
 
         public Form2()

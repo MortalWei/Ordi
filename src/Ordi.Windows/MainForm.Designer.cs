@@ -24,14 +24,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.TrDormancy = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
-            // 
-            // TrDormancy
-            // 
-            this.TrDormancy.Interval = 1000;
-            this.TrDormancy.Tick += new System.EventHandler(this.TrDormancy_Tick);
             // 
             // MainForm
             // 
@@ -47,6 +40,5 @@
 
         #endregion
         private System.ComponentModel.IContainer components;
-        private System.Windows.Forms.Timer TrDormancy;
     }
 }

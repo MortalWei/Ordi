@@ -47,12 +47,12 @@ namespace Ordi.App
             FmLogin fm = new FmLogin();
             if (fm.ShowDialog() == DialogResult.OK)
             {
-                MenuBehavior.InitializeLocal();
+                MenuBehavior.InitializeLocalMenu();
                 Application.Run(new Form2());
             }
             else
             {
-                MenuBehavior.InitializeLocal();
+                MenuBehavior.InitializeLocalMenu();
                 Application.Run(new Form2());
             }
             #endregion Login

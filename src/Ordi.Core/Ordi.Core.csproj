@@ -42,10 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\MenuAttribute.cs" />
+    <Compile Include="Attributes\PluginAttribute.cs" />
     <Compile Include="Data\PubVar.cs" />
     <Compile Include="Entities\AppModel.cs" />
     <Compile Include="Entities\EnumObject.cs" />
     <Compile Include="Entities\MenuModel.cs" />
+    <Compile Include="Entities\PluginModel.cs" />
     <Compile Include="Enums\AppSpecies.cs" />
     <Compile Include="Enums\InputCode.cs" />
     <Compile Include="Enums\KeyState.cs" />

@@ -1,33 +1,34 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 namespace Ordi.Attributes
 {
     /// <summary>
-    /// 菜单基本信息
-    /// 请填写Id,Name,Description,Category属性
+    /// 插件基本信息
     /// </summary>
     [AttributeUsage(AttributeTargets.Class, Inherited = false, AllowMultiple = false)]
-    public class MenuAttribute : Attribute
+    public class PluginAttribute : Attribute
     {
-        public MenuAttribute() { }
+        public PluginAttribute()
+        {
+        }
 
         /// <summary>
-        /// 菜单唯一标识
+        /// 插件唯一标识
         /// </summary>
         public string Id { get; set; }
-
         /// <summary>
-        /// 菜单名称
+        /// 插件名称
         /// </summary>
         public string Name { get; set; }
-
         /// <summary>
-        /// 菜单说明
+        /// 插件说明
         /// </summary>
         public string Description { get; set; }
-
         /// <summary>
-        /// 菜单分类
+        /// 插件种类
         /// </summary>
         public string Category { get; set; }
     }

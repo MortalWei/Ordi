@@ -165,6 +165,7 @@
     <Compile Include="FmTest.Designer.cs">
       <DependentUpon>FmTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Proxy\LoginProxy.cs" />
     <EmbeddedResource Include="FmMain.resx">
       <DependentUpon>FmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -216,6 +217,14 @@
     <ProjectReference Include="..\Ordi.Core\Ordi.Core.csproj">
       <Project>{b60fcb00-75d6-4cc6-b341-20208baa640b}</Project>
       <Name>Ordi.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ordi.IBusiness\Ordi.IBusiness.csproj">
+      <Project>{0A5C4CE8-2637-4AA7-886A-F770EDDC8CD3}</Project>
+      <Name>Ordi.IBusiness</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ordi.Instance\Ordi.Instance.csproj">
+      <Project>{25f90109-f133-49f6-a53e-8f53a913a0b3}</Project>
+      <Name>Ordi.Instance</Name>
     </ProjectReference>
     <ProjectReference Include="..\Ordi.Logger\Ordi.Logger.csproj">
       <Project>{bdb3d911-2efc-46f2-abfd-0ccdc703ed07}</Project>

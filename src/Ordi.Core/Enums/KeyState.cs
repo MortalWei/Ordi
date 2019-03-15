@@ -16,7 +16,7 @@ namespace Ordi.Enums
         /// 有效
         /// </summary>
         [Description("有效")]
-        Valid = 1,
+        Normal = 1,
         /// <summary>
         /// 新增
         /// 建议仅用于逻辑验证

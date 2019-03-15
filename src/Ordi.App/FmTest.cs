@@ -40,22 +40,43 @@ namespace Ordi.App
                     Species = Enums.MenuSpecies.Winform
                 };
             }
-
-
-
-            //var _List2 = System.IO.Directory.GetFiles(Application.StartupPath, "Ordi.*.dll");
-            //var files = Directory.GetFiles("C:\\path", "*.*", SearchOption.AllDirectories).Where(s => s.EndsWith(".bmp") || s.EndsWith(".jpg"));
         }
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            //NoneForm form = new NoneForm()
-            //{
-            //    Text = "测试对话框"
-            //};
-            //form.ShowDialog();
             Form1 fm = new Form1();
             fm.ShowDialog();
+        }
+
+        private void BarButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            string strEncrypt = MD5Encrypt32("2D2FFA26-106D-4DA0-8D2F-CCA3324EEAF6" + "1");
+            Form fm = new Form();
+            RichTextBox rx = new RichTextBox() { Text = strEncrypt };
+            fm.Controls.Add(rx);
+            rx.Dock = DockStyle.Fill;
+            fm.ShowDialog();
+        }
+
+        /// <summary>
+        /// 32位MD5加密
+        /// </summary>
+        /// <param name="strText"></param>
+        /// <returns></returns>
+        private static string MD5Encrypt32(string strText)
+        {
+            string cl = strText;
+            string pwd = "";
+            System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create(); //实例化一个md5对像
+                                                                                              // 加密后是一个字节类型的数组，这里要注意编码UTF8/Unicode等的选择　
+            byte[] s = md5.ComputeHash(System.Text.Encoding.UTF8.GetBytes(cl));
+            // 通过使用循环，将字节类型的数组转换为字符串，此字符串是常规字符格式化所得
+            for (int i = 0; i < s.Length; i++)
+            {
+                // 将得到的字符串使用十六进制类型格式。格式后的字符是小写的字母，如果使用大写（X）则格式后的字符是大写字符 
+                pwd = pwd + s[i].ToString("X");
+            }
+            return pwd;
         }
     }
 }

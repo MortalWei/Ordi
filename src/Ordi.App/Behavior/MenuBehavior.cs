@@ -51,7 +51,7 @@ namespace Ordi.App.Behavior
                         Path = System.IO.Path.GetFileName(ass.Location),
                         NameSpace = tp.Namespace,
                         ClassName = tp.Name,
-                        State = Enums.MenuState.Valid,
+                        State = Enums.MenuState.Normal,
                         Sort = serial++
                     };
                     PubVar.Menus.Add(menu);
@@ -99,7 +99,7 @@ namespace Ordi.App.Behavior
                         Path = System.IO.Path.GetFileName(ass.Location),
                         NameSpace = tp.Namespace,
                         ClassName = tp.Name,
-                        State = Enums.MenuState.Valid,
+                        State = Enums.MenuState.Normal,
                         Sort = serial++
                     };
                     PubVar.Menus.Add(menu);

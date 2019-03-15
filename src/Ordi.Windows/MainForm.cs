@@ -80,7 +80,7 @@ namespace Ordi.Windows
         /// <param name="args"></param>
         public void OnReload(object[] args)
         {
-            TrDormancy.Stop();
+            //TrDormancy.Stop();
             Reload(args);
         }
 
@@ -98,7 +98,7 @@ namespace Ordi.Windows
         /// 该方法用于主界面调用
         public void OnReActivation()
         {
-            TrDormancy.Stop();
+            //TrDormancy.Stop();
         }
 
         /// <summary>
@@ -108,7 +108,7 @@ namespace Ordi.Windows
         /// </summary>
         public virtual void ReActivation()
         {
-            TrDormancy.Stop();
+            //TrDormancy.Stop();
         }
         #endregion
     }

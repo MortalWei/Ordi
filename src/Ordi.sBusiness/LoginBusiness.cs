@@ -25,7 +25,24 @@ namespace Ordi.sBusiness
         /// <returns></returns>
         public DataSet GetStaff(string empno)
         {
-            return Instance.Query("SELECT * FROM ");
+            DataTable table = new DataTable();
+            table.Columns.Add("Id", typeof(string));
+            table.Columns.Add("Name", typeof(string));
+
+            for (int i = 1; i < 10; i++)
+            {
+                table.Rows.Add();
+                table.Rows[i - 1]["Id"] = i.ToString();
+                table.Rows[i - 1]["Name"] = "Name" + i.ToString();
+            }
+
+            DataSet dataSet = new DataSet();
+            dataSet.Tables.Add(table);
+
+
+            var ss = Instance.Query("SELECT 1 FROM DUAL");
+            return dataSet;
+            //return Instance.Query("SELECT * FROM ");
         }
 
         /// <summary>

@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{B0A5F27D-3D4B-4BD5-9AD9-2E3E116620CE}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Ordi.ConsoleHost</RootNamespace>
-    <AssemblyName>Ordi.ConsoleHost</AssemblyName>
+    <RootNamespace>Ordi</RootNamespace>
+    <AssemblyName>OrdiService</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,5 +50,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ordi.Core\Ordi.Core.csproj">
+      <Project>{b60fcb00-75d6-4cc6-b341-20208baa640b}</Project>
+      <Name>Ordi.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ordi.Logger\Ordi.Logger.csproj">
+      <Project>{bdb3d911-2efc-46f2-abfd-0ccdc703ed07}</Project>
+      <Name>Ordi.Logger</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ordi.sBusiness\Ordi.sBusiness.csproj">
+      <Project>{28492E88-7A96-49F0-A282-7B0192686749}</Project>
+      <Name>Ordi.sBusiness</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)OrdiService
+copy $(TargetDir)OrdiService.exe.config $(SolutionDir)OrdiService</PostBuildEvent>
+  </PropertyGroup>
 </Project>

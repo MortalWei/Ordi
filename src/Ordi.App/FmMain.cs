@@ -1,4 +1,6 @@
 ﻿using DevExpress.XtraBars.Ribbon;
+using Ordi.Utils.Data;
+using Ordi.Utils.Funcs;
 using System;
 using System.Reflection;
 
@@ -20,6 +22,8 @@ namespace Ordi.App
         private void FmMenu_Load(object sender, EventArgs e)
         {
             TopMost = false;
+
+            OrdiMsg.SetHandle(this);
 
             InitializeMenus();
 
@@ -61,7 +65,7 @@ namespace Ordi.App
         /// </summary>
         private void InitializeMenus()
         {
-            PubVar.Menus.ForEach(menu =>
+            OrdiVar.Menus.ForEach(menu =>
             {
                 RibbonPageGroup pageGroup = new RibbonPageGroup(menu.ShowName);
             });

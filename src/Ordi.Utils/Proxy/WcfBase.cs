@@ -2,20 +2,20 @@
 using System.ServiceModel;
 using System.ServiceModel.Description;
 
-namespace Ordi.Proxy
+namespace Ordi.Utils.Proxy
 {
     /// <summary>
     /// WCF代理
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public class WcfProxy<T> : ClientBase<T> where T : class
+    public class WcfBase<T> : ClientBase<T> where T : class
     {
         /// <summary>
         /// WCF代理
         /// </summary>
-        public WcfProxy() { }
+        public WcfBase() { }
 
-        protected WcfProxy(string hostAddress) : base(NetTcp, new EndpointAddress(hostAddress))
+        protected WcfBase(string hostAddress) : base(NetTcp, new EndpointAddress(hostAddress))
         {
             ContractDescription contract = this.Endpoint.Contract;
 

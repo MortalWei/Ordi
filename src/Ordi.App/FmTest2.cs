@@ -7,6 +7,7 @@ using System.Text;
 using System.Linq;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using Ordi.Messaging;
 
 namespace Ordi.App
 {
@@ -20,6 +21,9 @@ namespace Ordi.App
         private void barButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             DevExpress.XtraEditors.XtraMessageBox.Show("测试窗体2");
+            Form fm = new Form();
+            fm.ShowDialog();
+            FuncMsg.SetHandle(this);
         }
     }
 }

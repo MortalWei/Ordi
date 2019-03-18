@@ -6,6 +6,7 @@ using Ordi.Attributes;
 using System;
 using Ordi.Entities;
 using Ordi.Windows;
+using System.Data;
 
 namespace Ordi.App
 {
@@ -19,6 +20,11 @@ namespace Ordi.App
         private void BarButtonItem1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             XtraMessageBox.Show("测试按钮");
+            DataSet ds;
+            using (var proxy = new Ordi.App.Proxy.LoginFactory())
+            {
+                ds = proxy.GetData();
+            }
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -44,8 +50,15 @@ namespace Ordi.App
 
         private void barButtonItem3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form1 fm = new Form1();
-            fm.ShowDialog();
+            //Form1 fm = new Form1();
+            //fm.ShowDialog();
+
+            DataSet ds;
+            using (var proxy = new Ordi.App.Proxy.LoginFactory())
+            {
+                ds = proxy.GetData();
+            }
+
         }
 
         private void BarButtonItem4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -81,11 +81,11 @@ namespace Ordi.App
             AssemblyName assemblyName = new AssemblyName(args.Name);
 
             var assemblyAllName = assemblyName.Name + ".dll";
-            //加载CefSharp相关库
-            if (args.Name.StartsWith("CefSharp"))
+
+            if (Ordi.Files.OrdiFile.LibFiles != null && Ordi.Files.OrdiFile.LibFiles.Exists(c => c.Name == assemblyAllName))
             {
-                string assemblyPath = Path.Combine(Application.StartupPath, CefSettingClass.LibraryName, CefSettingClass.CefLibName, assemblyAllName);
-                return File.Exists(assemblyPath) ? Assembly.LoadFile(assemblyPath) : null;
+                var file = Ordi.Files.OrdiFile.LibFiles.Find(c => c.Name == assemblyAllName);
+                return Assembly.LoadFile(file.FullName);
             }
 
             //判断程序集的区域性

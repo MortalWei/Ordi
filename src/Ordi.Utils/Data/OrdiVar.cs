@@ -1,12 +1,12 @@
 ﻿using Ordi.Entities;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
-namespace Ordi
+namespace Ordi.Utils.Data
 {
-    /// <summary>
-    /// 应用相关变量集
-    /// </summary>
-    public static class PubVar
+    public sealed class OrdiVar
     {
         /// <summary>
         /// 当前应用已经注册的菜单

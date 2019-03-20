@@ -1,6 +1,6 @@
-﻿namespace Ordi.App
+﻿namespace Ordi.Windows.Forms
 {
-    partial class Form1
+    partial class MsgForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.SuspendLayout();
             // 
-            // Form1
+            // MsgForm
             // 
-            this.Appearance.BackColor = System.Drawing.Color.White;
-            this.Appearance.Options.UseBackColor = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.LogoImage = ((System.Drawing.Image)(resources.GetObject("$this.LogoImage")));
-            this.Name = "Form1";
-            this.Text = "测试窗体";
-            this.TopMost = false;
+            this.ClientSize = new System.Drawing.Size(284, 161);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "MsgForm";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
 
         }

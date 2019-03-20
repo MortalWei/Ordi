@@ -52,6 +52,12 @@
     <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\MsgForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MsgForm.Designer.cs">
+      <DependentUpon>MsgForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\NoneForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MsgForm.resx">
+      <DependentUpon>MsgForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NoneForm.resx">
       <DependentUpon>NoneForm.cs</DependentUpon>

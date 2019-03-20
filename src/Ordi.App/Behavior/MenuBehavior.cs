@@ -1,5 +1,6 @@
 ﻿using Ordi.Attributes;
 using Ordi.Entities;
+using Ordi.Utils.Data;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,9 @@ namespace Ordi.App.Behavior
 
             var domain = LoaderBehavior.CreateDomain("InitializeLocalMenuDomain");
 
-            if (PubVar.Menus == null)
+            if (OrdiVar.Menus == null)
             {
-                PubVar.Menus = new List<MenuModel>();
+                OrdiVar.Menus = new List<MenuModel>();
             }
             var serial = 1;
             foreach (var path in filePaths)
@@ -54,7 +55,7 @@ namespace Ordi.App.Behavior
                         State = Enums.MenuState.Normal,
                         Sort = serial++
                     };
-                    PubVar.Menus.Add(menu);
+                    OrdiVar.Menus.Add(menu);
                 }
             }
             AppDomain.Unload(domain);
@@ -70,9 +71,9 @@ namespace Ordi.App.Behavior
 
             var domain = LoaderBehavior.CreateDomain("InitializeLocalMenuDomain");
 
-            if (PubVar.Menus == null)
+            if (OrdiVar.Menus == null)
             {
-                PubVar.Menus = new List<MenuModel>();
+                OrdiVar.Menus = new List<MenuModel>();
             }
             var serial = 1;
             foreach (var path in filePaths)
@@ -102,7 +103,7 @@ namespace Ordi.App.Behavior
                         State = Enums.MenuState.Normal,
                         Sort = serial++
                     };
-                    PubVar.Menus.Add(menu);
+                    OrdiVar.Menus.Add(menu);
                 }
             }
             AppDomain.Unload(domain);

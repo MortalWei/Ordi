@@ -27,6 +27,15 @@ namespace Ordi.App
 
             InitializeMenus();
 
+            //FmTest fm2 = new FmTest();
+            //fm2.MdiParent = this;
+            //fm2.Show();
+
+            //FmTest2 fm3 = new FmTest2();
+            //fm3.MdiParent = this;
+            //fm3.Show();
+            //xtraTabbedMdiManager1.SelectedPage = xtraTabbedMdiManager1.Pages[fm3];
+
             FmTest fm = new FmTest();
 
             RibbonPage _RibbonPage = new RibbonPage(fm.Text);//创建一个新RibbonPage 

@@ -120,7 +120,6 @@
   <ItemGroup>
     <Compile Include="Behavior\LoaderBehavior.cs" />
     <Compile Include="Behavior\MenuBehavior.cs" />
-    <Compile Include="Factory\LoginBaseFactory.cs" />
     <Compile Include="FmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +151,24 @@
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
     <Compile Include="Launcher.cs" />
+    <Compile Include="Menus\FmCfgMaintain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\FmCfgMaintain.Designer.cs">
+      <DependentUpon>FmCfgMaintain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\FmMenuMaintain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\FmMenuMaintain.Designer.cs">
+      <DependentUpon>FmMenuMaintain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\FmPluginMaintain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\FmPluginMaintain.Designer.cs">
+      <DependentUpon>FmPluginMaintain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FmLogin.cs">
@@ -184,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\FmMenuMaintain.resx">
+      <DependentUpon>FmMenuMaintain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -91,5 +91,10 @@ namespace Ordi.App
             }
             return pwd;
         }
+
+        private void simpleButton1_Click(object sender, EventArgs e)
+        {
+            XtraMessageBox.Show("111");
+        }
     }
 }

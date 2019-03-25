@@ -28,142 +28,149 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmMain));
-            this.rbcMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barTime = new DevExpress.XtraBars.BarStaticItem();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem5 = new DevExpress.XtraBars.BarButtonItem();
-            this.rbgMenu = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.TrTimepiece = new System.Windows.Forms.Timer();
-            this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
-            ((System.ComponentModel.ISupportInitialize)(this.rbcMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
+            this.RcMain = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.BarTime = new DevExpress.XtraBars.BarStaticItem();
+            this.BarBtnRestart = new DevExpress.XtraBars.BarButtonItem();
+            this.BarBtnMenuMaintain = new DevExpress.XtraBars.BarButtonItem();
+            this.BarBtnPluginMaintain = new DevExpress.XtraBars.BarButtonItem();
+            this.BarBtnCfgMaintain = new DevExpress.XtraBars.BarButtonItem();
+            this.BarCompany = new DevExpress.XtraBars.BarStaticItem();
+            this.RbgHome = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.RbgMaintain = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.rpgMaintain = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.RsTip = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
+            this.TrTimepiece = new System.Windows.Forms.Timer(this.components);
+            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.RcMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // rbcMain
+            // RcMain
             // 
-            this.rbcMain.ButtonGroupsLayout = DevExpress.XtraBars.ButtonGroupsLayout.ThreeRows;
-            this.rbcMain.ButtonGroupsVertAlign = DevExpress.Utils.VertAlignment.Center;
-            this.rbcMain.DrawGroupCaptions = DevExpress.Utils.DefaultBoolean.False;
-            this.rbcMain.DrawGroupsBorder = false;
-            this.rbcMain.ExpandCollapseItem.Id = 0;
-            this.rbcMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.rbcMain.ExpandCollapseItem,
-            this.barTime,
-            this.barButtonItem1,
-            this.barButtonItem2,
-            this.barButtonItem3,
-            this.barButtonItem4,
-            this.barButtonItem5});
-            this.rbcMain.ItemsVertAlign = DevExpress.Utils.VertAlignment.Center;
-            this.rbcMain.Location = new System.Drawing.Point(0, 0);
-            this.rbcMain.MaxItemId = 7;
-            this.rbcMain.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Never;
-            this.rbcMain.Name = "rbcMain";
-            this.rbcMain.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.False;
-            this.rbcMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
-            this.rbgMenu,
-            this.ribbonPage1});
-            this.rbcMain.QuickToolbarItemLinks.Add(this.barButtonItem1);
-            this.rbcMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
-            this.rbcMain.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.True;
-            this.rbcMain.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
-            this.rbcMain.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show;
-            this.rbcMain.ShowQatLocationSelector = false;
-            this.rbcMain.ShowToolbarCustomizeItem = false;
-            this.rbcMain.Size = new System.Drawing.Size(990, 126);
-            this.rbcMain.StatusBar = this.ribbonStatusBar1;
-            this.rbcMain.Toolbar.ShowCustomizeItem = false;
-            this.rbcMain.SelectedPageChanging += new DevExpress.XtraBars.Ribbon.RibbonPageChangingEventHandler(this.RibbonControl1_SelectedPageChanging);
-            this.rbcMain.SelectedPageChanged += new System.EventHandler(this.RibbonControl1_SelectedPageChanged);
+            this.RcMain.AllowMdiChildButtons = false;
+            this.RcMain.AllowMinimizeRibbon = false;
+            this.RcMain.ButtonGroupsLayout = DevExpress.XtraBars.ButtonGroupsLayout.ThreeRows;
+            this.RcMain.ButtonGroupsVertAlign = DevExpress.Utils.VertAlignment.Center;
+            this.RcMain.DrawGroupCaptions = DevExpress.Utils.DefaultBoolean.False;
+            this.RcMain.DrawGroupsBorder = false;
+            this.RcMain.ExpandCollapseItem.Id = 0;
+            this.RcMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.RcMain.ExpandCollapseItem,
+            this.BarTime,
+            this.BarBtnRestart,
+            this.BarBtnMenuMaintain,
+            this.BarBtnPluginMaintain,
+            this.BarBtnCfgMaintain,
+            this.BarCompany});
+            this.RcMain.ItemsVertAlign = DevExpress.Utils.VertAlignment.Center;
+            this.RcMain.Location = new System.Drawing.Point(0, 0);
+            this.RcMain.MaxItemId = 1;
+            this.RcMain.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Never;
+            this.RcMain.Name = "RcMain";
+            this.RcMain.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.False;
+            this.RcMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.RbgHome,
+            this.RbgMaintain});
+            this.RcMain.QuickToolbarItemLinks.Add(this.BarBtnRestart);
+            this.RcMain.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
+            this.RcMain.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
+            this.RcMain.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
+            this.RcMain.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
+            this.RcMain.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show;
+            this.RcMain.ShowQatLocationSelector = false;
+            this.RcMain.ShowToolbarCustomizeItem = false;
+            this.RcMain.Size = new System.Drawing.Size(990, 126);
+            this.RcMain.StatusBar = this.RsTip;
+            this.RcMain.Toolbar.ShowCustomizeItem = false;
+            this.RcMain.SelectedPageChanging += new DevExpress.XtraBars.Ribbon.RibbonPageChangingEventHandler(this.RcMain_SelectedPageChanging);
+            this.RcMain.SelectedPageChanged += new System.EventHandler(this.RcMain_SelectedPageChanged);
+            this.RcMain.Merge += new DevExpress.XtraBars.Ribbon.RibbonMergeEventHandler(this.RcMain_Merge);
+            this.RcMain.UnMerge += new DevExpress.XtraBars.Ribbon.RibbonMergeEventHandler(this.RcMain_UnMerge);
             // 
-            // barTime
+            // BarTime
             // 
-            this.barTime.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barTime.Caption = "0000-00-00 00:00:00";
-            this.barTime.Id = 1;
-            this.barTime.Name = "barTime";
-            this.barTime.TextAlignment = System.Drawing.StringAlignment.Near;
+            this.BarTime.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
+            this.BarTime.Caption = "0000-00-00 00:00:00";
+            this.BarTime.Id = 1;
+            this.BarTime.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BarTime.ImageOptions.Image")));
+            this.BarTime.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BarTime.ImageOptions.LargeImage")));
+            this.BarTime.Name = "BarTime";
+            this.BarTime.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
-            // barButtonItem1
+            // BarBtnRestart
             // 
-            this.barButtonItem1.Caption = "barButtonItem1";
-            this.barButtonItem1.Id = 2;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.BarBtnRestart.Caption = "重新启动";
+            this.BarBtnRestart.Id = 2;
+            this.BarBtnRestart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BarBtnRestart.ImageOptions.Image")));
+            this.BarBtnRestart.Name = "BarBtnRestart";
             // 
-            // barButtonItem2
+            // BarBtnMenuMaintain
             // 
-            this.barButtonItem2.Caption = "barButtonItem2";
-            this.barButtonItem2.Id = 3;
-            this.barButtonItem2.Name = "barButtonItem2";
+            this.BarBtnMenuMaintain.Caption = "菜单管理";
+            this.BarBtnMenuMaintain.Id = 4;
+            this.BarBtnMenuMaintain.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BarBtnMenuMaintain.ImageOptions.Image")));
+            this.BarBtnMenuMaintain.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BarBtnMenuMaintain.ImageOptions.LargeImage")));
+            this.BarBtnMenuMaintain.Name = "BarBtnMenuMaintain";
+            this.BarBtnMenuMaintain.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarBtnMenuMaintain_ItemClick);
             // 
-            // barButtonItem3
+            // BarBtnPluginMaintain
             // 
-            this.barButtonItem3.Caption = "菜单管理";
-            this.barButtonItem3.Id = 4;
-            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
-            this.barButtonItem3.Name = "barButtonItem3";
+            this.BarBtnPluginMaintain.Caption = "插件管理";
+            this.BarBtnPluginMaintain.Id = 5;
+            this.BarBtnPluginMaintain.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BarBtnPluginMaintain.ImageOptions.Image")));
+            this.BarBtnPluginMaintain.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BarBtnPluginMaintain.ImageOptions.LargeImage")));
+            this.BarBtnPluginMaintain.Name = "BarBtnPluginMaintain";
+            this.BarBtnPluginMaintain.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarBtnPluginMaintain_ItemClick);
             // 
-            // barButtonItem4
+            // BarBtnCfgMaintain
             // 
-            this.barButtonItem4.Caption = "插件管理";
-            this.barButtonItem4.Id = 5;
-            this.barButtonItem4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.Image")));
-            this.barButtonItem4.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem4.ImageOptions.LargeImage")));
-            this.barButtonItem4.Name = "barButtonItem4";
+            this.BarBtnCfgMaintain.Caption = "配置管理";
+            this.BarBtnCfgMaintain.Id = 6;
+            this.BarBtnCfgMaintain.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("BarBtnCfgMaintain.ImageOptions.Image")));
+            this.BarBtnCfgMaintain.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("BarBtnCfgMaintain.ImageOptions.LargeImage")));
+            this.BarBtnCfgMaintain.Name = "BarBtnCfgMaintain";
+            this.BarBtnCfgMaintain.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.BarBtnCfgMaintain_ItemClick);
             // 
-            // barButtonItem5
+            // BarCompany
             // 
-            this.barButtonItem5.Caption = "配置管理";
-            this.barButtonItem5.Id = 6;
-            this.barButtonItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.Image")));
-            this.barButtonItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem5.ImageOptions.LargeImage")));
-            this.barButtonItem5.Name = "barButtonItem5";
+            this.BarCompany.Caption = "Ordi";
+            this.BarCompany.Id = 2;
+            this.BarCompany.Name = "BarCompany";
+            this.BarCompany.TextAlignment = System.Drawing.StringAlignment.Near;
             // 
-            // rbgMenu
+            // RbgHome
             // 
-            this.rbgMenu.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1});
-            this.rbgMenu.Name = "rbgMenu";
-            this.rbgMenu.Text = "菜单";
+            this.RbgHome.Name = "RbgHome";
+            this.RbgHome.Text = "首页";
             // 
-            // ribbonPageGroup1
+            // RbgMaintain
             // 
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "ribbonPageGroup1";
+            this.RbgMaintain.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.rpgMaintain});
+            this.RbgMaintain.Name = "RbgMaintain";
+            this.RbgMaintain.Text = "维护";
             // 
-            // ribbonPage1
+            // rpgMaintain
             // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "维护";
+            this.rpgMaintain.ItemLinks.Add(this.BarBtnMenuMaintain);
+            this.rpgMaintain.ItemLinks.Add(this.BarBtnPluginMaintain);
+            this.rpgMaintain.ItemLinks.Add(this.BarBtnCfgMaintain);
+            this.rpgMaintain.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
+            this.rpgMaintain.Name = "rpgMaintain";
+            this.rpgMaintain.Text = "基础配置";
             // 
-            // ribbonPageGroup2
+            // RsTip
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem3);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem4);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem5);
-            this.ribbonPageGroup2.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            this.ribbonPageGroup2.Text = "ribbonPageGroup2";
-            // 
-            // ribbonStatusBar1
-            // 
-            this.ribbonStatusBar1.ItemLinks.Add(this.barTime);
-            this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 664);
-            this.ribbonStatusBar1.Name = "ribbonStatusBar1";
-            this.ribbonStatusBar1.Ribbon = this.rbcMain;
-            this.ribbonStatusBar1.Size = new System.Drawing.Size(990, 31);
+            this.RsTip.ItemLinks.Add(this.BarTime);
+            this.RsTip.ItemLinks.Add(this.BarCompany);
+            this.RsTip.Location = new System.Drawing.Point(0, 664);
+            this.RsTip.Name = "RsTip";
+            this.RsTip.Ribbon = this.RcMain;
+            this.RsTip.Size = new System.Drawing.Size(990, 31);
             // 
             // TrTimepiece
             // 
@@ -171,30 +178,42 @@
             this.TrTimepiece.Interval = 1000;
             this.TrTimepiece.Tick += new System.EventHandler(this.TrTimepiece_Tick);
             // 
-            // xtraTabbedMdiManager1
+            // documentManager1
             // 
-            this.xtraTabbedMdiManager1.MdiParent = this;
-            this.xtraTabbedMdiManager1.ShowHeaderFocus = DevExpress.Utils.DefaultBoolean.False;
+            this.documentManager1.MdiParent = this;
+            this.documentManager1.MenuManager = this.RcMain;
+            this.documentManager1.RibbonAndBarsMergeStyle = DevExpress.XtraBars.Docking2010.Views.RibbonAndBarsMergeStyle.Always;
+            this.documentManager1.RightToLeftLayout = DevExpress.Utils.DefaultBoolean.False;
+            this.documentManager1.ShowThumbnailsInTaskBar = DevExpress.Utils.DefaultBoolean.False;
+            this.documentManager1.ShowToolTips = DevExpress.Utils.DefaultBoolean.False;
+            this.documentManager1.View = this.tabbedView1;
+            this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
+            this.tabbedView1});
+            // 
+            // tabbedView1
+            // 
+            this.tabbedView1.RootContainer.Element = null;
+            this.tabbedView1.UseDocumentSelector = DevExpress.Utils.DefaultBoolean.False;
             // 
             // FmMain
             // 
-            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 695);
-            this.Controls.Add(this.ribbonStatusBar1);
-            this.Controls.Add(this.rbcMain);
+            this.Controls.Add(this.RsTip);
+            this.Controls.Add(this.RcMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.Name = "FmMain";
-            this.Ribbon = this.rbcMain;
+            this.Ribbon = this.RcMain;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.StatusBar = this.ribbonStatusBar1;
+            this.StatusBar = this.RsTip;
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FmMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.rbcMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.RcMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -202,20 +221,22 @@
 
         #endregion
 
-        private DevExpress.XtraBars.Ribbon.RibbonControl rbcMain;
-        private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
-        private DevExpress.XtraBars.BarStaticItem barTime;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.Ribbon.RibbonControl RcMain;
+        private DevExpress.XtraBars.Ribbon.RibbonStatusBar RsTip;
+        private DevExpress.XtraBars.BarStaticItem BarTime;
+        private DevExpress.XtraBars.BarButtonItem BarBtnRestart;
         private System.Windows.Forms.Timer TrTimepiece;
-        private DevExpress.XtraBars.Ribbon.RibbonPage rbgMenu;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
-        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem4;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem5;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage RbgHome;
+        private DevExpress.XtraBars.Ribbon.RibbonPage RgMaintain;
+        private DevExpress.XtraBars.BarButtonItem BarBtnMenuMaintain;
+        private DevExpress.XtraBars.BarButtonItem BarBtnCfgMaintain;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup RpgMaintain;
+        private DevExpress.XtraBars.BarButtonItem BarBtnPluginMaintain;
+        private DevExpress.XtraBars.BarStaticItem BarCompany;
+        private DevExpress.XtraBars.Ribbon.RibbonPage RbgMaintain;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgMaintain;
+        private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
+        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
     }
 }
 

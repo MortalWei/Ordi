@@ -1,4 +1,5 @@
-﻿using Ordi.Enums;
+﻿using Ordi.Attributes;
+using Ordi.Enums;
 using System;
 using System.Runtime.Serialization;
 
@@ -14,6 +15,7 @@ namespace Ordi.Entities
         /// <summary>
         /// 应用Id
         /// </summary>
+        [DataField("EMPID", DisplayName = "唯一标识", Description = "员工唯一标识")]
         [DataMember]
         public string Id { get; set; }
         /// <summary>
@@ -31,6 +33,8 @@ namespace Ordi.Entities
         /// </summary>
         [DataMember]
         public AppSpecies Species { get; set; }
+        [DataMember]
+        public string HomePage { get; set; }
         /// <summary>
         /// 排序
         /// </summary>

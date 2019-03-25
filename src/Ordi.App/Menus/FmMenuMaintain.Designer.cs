@@ -28,168 +28,54 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.barMain = new DevExpress.XtraBars.BarManager();
-            this.bar2 = new DevExpress.XtraBars.Bar();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
-            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FmMenuMaintain));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.lcgApp = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.lcgMenu = new DevExpress.XtraLayout.LayoutControlGroup();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.bandedGridView1 = new DevExpress.XtraGrid.Views.BandedGrid.BandedGridView();
-            this.bar1 = new DevExpress.XtraBars.Bar();
-            ((System.ComponentModel.ISupportInitialize)(this.barMain)).BeginInit();
+            this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.lcgApp = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.lcgMenu = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lcgApp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lcgMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcgApp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcgMenu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // barMain
-            // 
-            this.barMain.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
-            this.bar2,
-            this.bar1});
-            this.barMain.DockControls.Add(this.barDockControlTop);
-            this.barMain.DockControls.Add(this.barDockControlBottom);
-            this.barMain.DockControls.Add(this.barDockControlLeft);
-            this.barMain.DockControls.Add(this.barDockControlRight);
-            this.barMain.Form = this;
-            this.barMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.barButtonItem1});
-            this.barMain.MainMenu = this.bar2;
-            this.barMain.MaxItemId = 1;
-            // 
-            // bar2
-            // 
-            this.bar2.BarName = "Main menu";
-            this.bar2.DockCol = 0;
-            this.bar2.DockRow = 0;
-            this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem1)});
-            this.bar2.OptionsBar.MultiLine = true;
-            this.bar2.OptionsBar.UseWholeRow = true;
-            this.bar2.Text = "Main menu";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "新增";
-            this.barButtonItem1.Id = 0;
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // barDockControlTop
-            // 
-            this.barDockControlTop.CausesValidation = false;
-            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
-            this.barDockControlTop.Manager = this.barMain;
-            this.barDockControlTop.Size = new System.Drawing.Size(884, 53);
-            // 
-            // barDockControlBottom
-            // 
-            this.barDockControlBottom.CausesValidation = false;
-            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.barDockControlBottom.Location = new System.Drawing.Point(0, 561);
-            this.barDockControlBottom.Manager = this.barMain;
-            this.barDockControlBottom.Size = new System.Drawing.Size(884, 0);
-            // 
-            // barDockControlLeft
-            // 
-            this.barDockControlLeft.CausesValidation = false;
-            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 53);
-            this.barDockControlLeft.Manager = this.barMain;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 508);
-            // 
-            // barDockControlRight
-            // 
-            this.barDockControlRight.CausesValidation = false;
-            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(884, 53);
-            this.barDockControlRight.Manager = this.barMain;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 508);
             // 
             // layoutControl1
             // 
             this.layoutControl1.Controls.Add(this.gridControl1);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControl1.Location = new System.Drawing.Point(0, 53);
+            this.layoutControl1.Location = new System.Drawing.Point(0, 104);
             this.layoutControl1.Name = "layoutControl1";
+            this.layoutControl1.OptionsCustomizationForm.DesignTimeCustomizationFormPositionAndSize = new System.Drawing.Rectangle(847, 413, 450, 400);
             this.layoutControl1.Root = this.layoutControlGroup1;
-            this.layoutControl1.Size = new System.Drawing.Size(884, 508);
+            this.layoutControl1.Size = new System.Drawing.Size(1031, 550);
             this.layoutControl1.TabIndex = 4;
             this.layoutControl1.Text = "layoutControl1";
-            // 
-            // layoutControlGroup1
-            // 
-            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.False;
-            this.layoutControlGroup1.GroupBordersVisible = false;
-            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.lcgApp,
-            this.lcgMenu});
-            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup1.Name = "layoutControlGroup1";
-            this.layoutControlGroup1.Size = new System.Drawing.Size(884, 508);
-            this.layoutControlGroup1.TextVisible = false;
-            // 
-            // emptySpaceItem2
-            // 
-            this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 0);
-            this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(549, 494);
-            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // lcgApp
-            // 
-            this.lcgApp.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1});
-            this.lcgApp.Location = new System.Drawing.Point(0, 0);
-            this.lcgApp.Name = "lcgApp";
-            this.lcgApp.Size = new System.Drawing.Size(311, 508);
-            this.lcgApp.Text = "应用";
-            // 
-            // lcgMenu
-            // 
-            this.lcgMenu.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.emptySpaceItem2});
-            this.lcgMenu.Location = new System.Drawing.Point(311, 0);
-            this.lcgMenu.Name = "lcgMenu";
-            this.lcgMenu.Size = new System.Drawing.Size(573, 537);
-            this.lcgMenu.Text = "XX--菜单";
             // 
             // gridControl1
             // 
             this.gridControl1.Location = new System.Drawing.Point(14, 33);
             this.gridControl1.MainView = this.bandedGridView1;
-            this.gridControl1.MenuManager = this.barMain;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(283, 461);
+            this.gridControl1.Size = new System.Drawing.Size(335, 503);
             this.gridControl1.TabIndex = 4;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.bandedGridView1});
-            // 
-            // layoutControlItem1
-            // 
-            this.layoutControlItem1.Control = this.gridControl1;
-            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(287, 465);
-            this.layoutControlItem1.Text = "应用列表";
-            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem1.TextVisible = false;
             // 
             // bandedGridView1
             // 
@@ -227,50 +113,148 @@
             this.bandedGridView1.OptionsView.ShowPreviewRowLines = DevExpress.Utils.DefaultBoolean.True;
             this.bandedGridView1.OptionsView.ShowVerticalLines = DevExpress.Utils.DefaultBoolean.True;
             // 
-            // bar1
+            // layoutControlGroup1
             // 
-            this.bar1.BarName = "Custom 3";
-            this.bar1.DockCol = 0;
-            this.bar1.DockRow = 1;
-            this.bar1.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
-            this.bar1.Text = "Custom 3";
+            this.layoutControlGroup1.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.False;
+            this.layoutControlGroup1.GroupBordersVisible = false;
+            this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.lcgApp,
+            this.lcgMenu});
+            this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup1.Name = "Root";
+            this.layoutControlGroup1.Size = new System.Drawing.Size(1031, 550);
+            this.layoutControlGroup1.TextVisible = false;
+            // 
+            // lcgApp
+            // 
+            this.lcgApp.AppearanceTabPage.PageClient.BackColor = System.Drawing.Color.White;
+            this.lcgApp.AppearanceTabPage.PageClient.Options.UseBackColor = true;
+            this.lcgApp.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1});
+            this.lcgApp.Location = new System.Drawing.Point(0, 0);
+            this.lcgApp.Name = "lcgApp";
+            this.lcgApp.Size = new System.Drawing.Size(363, 550);
+            this.lcgApp.Text = "应用";
+            // 
+            // layoutControlItem1
+            // 
+            this.layoutControlItem1.Control = this.gridControl1;
+            this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem1.Name = "layoutControlItem1";
+            this.layoutControlItem1.Size = new System.Drawing.Size(339, 507);
+            this.layoutControlItem1.Text = "应用列表";
+            this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem1.TextVisible = false;
+            // 
+            // lcgMenu
+            // 
+            this.lcgMenu.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.emptySpaceItem2});
+            this.lcgMenu.Location = new System.Drawing.Point(363, 0);
+            this.lcgMenu.Name = "lcgMenu";
+            this.lcgMenu.Size = new System.Drawing.Size(668, 531);
+            this.lcgMenu.Text = "XX--菜单";
+            // 
+            // emptySpaceItem2
+            // 
+            this.emptySpaceItem2.AllowHotTrack = false;
+            this.emptySpaceItem2.Location = new System.Drawing.Point(0, 0);
+            this.emptySpaceItem2.Name = "emptySpaceItem2";
+            this.emptySpaceItem2.Size = new System.Drawing.Size(644, 488);
+            this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
+            // 
+            // ribbonControl1
+            // 
+            this.ribbonControl1.DrawGroupCaptions = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.barButtonItem1,
+            this.barButtonItem2,
+            this.barButtonItem3});
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 4;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage1});
+            this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.ShowCategoryInCaption = false;
+            this.ribbonControl1.ShowDisplayOptionsMenuButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.ShowExpandCollapseButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.ShowPageHeadersInFormCaption = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
+            this.ribbonControl1.ShowQatLocationSelector = false;
+            this.ribbonControl1.ShowToolbarCustomizeItem = false;
+            this.ribbonControl1.Size = new System.Drawing.Size(1031, 104);
+            this.ribbonControl1.Toolbar.ShowCustomizeItem = false;
+            // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "新增应用";
+            this.barButtonItem1.Id = 1;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "新增菜单";
+            this.barButtonItem2.Id = 2;
+            this.barButtonItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
+            this.barButtonItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.barButtonItem2.Name = "barButtonItem2";
+            // 
+            // barButtonItem3
+            // 
+            this.barButtonItem3.Caption = "删除菜单";
+            this.barButtonItem3.Id = 3;
+            this.barButtonItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
+            this.barButtonItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.barButtonItem3.Name = "barButtonItem3";
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "应用菜单维护";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem2);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem3);
+            this.ribbonPageGroup1.ItemsLayout = DevExpress.XtraBars.Ribbon.RibbonPageGroupItemsLayout.OneRow;
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "基础功能";
             // 
             // FmMenuMaintain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.Appearance.BackColor = System.Drawing.Color.White;
+            this.Appearance.Options.UseBackColor = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(884, 561);
+            this.ClientSize = new System.Drawing.Size(1031, 654);
             this.Controls.Add(this.layoutControl1);
-            this.Controls.Add(this.barDockControlLeft);
-            this.Controls.Add(this.barDockControlRight);
-            this.Controls.Add(this.barDockControlBottom);
-            this.Controls.Add(this.barDockControlTop);
+            this.Controls.Add(this.ribbonControl1);
             this.Name = "FmMenuMaintain";
-            this.Text = "FmMenuMaintain";
-            ((System.ComponentModel.ISupportInitialize)(this.barMain)).EndInit();
+            this.Text = "应用菜单维护";
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lcgApp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lcgMenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bandedGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcgApp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lcgMenu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private DevExpress.XtraBars.BarManager barMain;
-        private DevExpress.XtraBars.Bar bar2;
-        private DevExpress.XtraBars.BarDockControl barDockControlTop;
-        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
-        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
-        private DevExpress.XtraBars.BarDockControl barDockControlRight;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlGroup lcgApp;
@@ -279,6 +263,11 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraGrid.Views.BandedGrid.BandedGridView bandedGridView1;
-        private DevExpress.XtraBars.Bar bar1;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem3;
     }
 }

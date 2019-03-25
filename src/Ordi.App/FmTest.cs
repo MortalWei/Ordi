@@ -42,7 +42,7 @@ namespace Ordi.App
                 {
                     Id = string.IsNullOrEmpty(_Attribute.Id) ? item.Namespace + item.Name : _Attribute.Id,
                     Name = string.IsNullOrEmpty(_Attribute.Name) ? item.Name : _Attribute.Name,
-                    Description = _Attribute.Description,
+                    About = _Attribute.Description,
                     Species = Enums.MenuSpecies.Winform
                 };
             }
@@ -94,6 +94,7 @@ namespace Ordi.App
 
         private void simpleButton1_Click(object sender, EventArgs e)
         {
+            //ribbonControl1.DrawGroupCaptions
             XtraMessageBox.Show("111");
         }
     }

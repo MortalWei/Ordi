@@ -13,6 +13,45 @@ namespace Ordi.App.Behavior
     internal sealed class MenuBehavior
     {
         /// <summary>
+        /// 初始化系统菜单
+        /// </summary>
+        public static void InitializeSystemMenu()
+        {
+            if (OrdiVar.Menus == null)
+            {
+                OrdiVar.Menus = new List<MenuModel>();
+            }
+
+            AddMenus(System.Reflection.Assembly.GetCallingAssembly(), 1);
+        }
+
+        private static void AddMenus(System.Reflection.Assembly assembly, int serial)
+        {
+            var types = assembly.GetTypes().Where(c => c.GetCustomAttributes(typeof(MenuAttribute), false).Length > 0);
+            if (types == null || types.Count() == 0) return;
+
+            foreach (Type tp in types)
+            {
+                var attr = tp.GetCustomAttributes(typeof(MenuAttribute), false)?[0] as MenuAttribute;
+                var menu = new MenuModel()
+                {
+                    Id = string.IsNullOrEmpty(attr.Id) ? tp.Namespace + tp.Name : attr.Id,
+                    Name = string.IsNullOrEmpty(attr.Name) ? tp.Name : attr.Name,
+                    ShowName = string.IsNullOrEmpty(attr.Name) ? tp.Name : attr.Name,
+                    Category = attr.Category,
+                    About = attr.Description,
+                    Species = Enums.MenuSpecies.Winform,
+                    Path = System.IO.Path.GetFileName(assembly.Location),
+                    NameSpace = tp.Namespace,
+                    ClassName = tp.Name,
+                    State = Enums.MenuState.Normal,
+                    Sort = serial++
+                };
+                OrdiVar.Menus.Add(menu);
+            }
+        }
+
+        /// <summary>
         /// 初始化本地可用菜单
         /// </summary>
         public static void InitializeLocalMenu()
@@ -35,28 +74,30 @@ namespace Ordi.App.Behavior
 
                 var ass = loader.LoadAssembly(path);
 
-                var types = ass.GetTypes().Where(c => c.GetCustomAttributes(typeof(MenuAttribute), false).Length > 0);
-                if (types == null || types.Count() == 0) return;
+                AddMenus(ass, serial);
 
-                foreach (Type tp in types)
-                {
-                    var attr = tp.GetCustomAttributes(typeof(MenuAttribute), false)?[0] as MenuAttribute;
-                    var menu = new MenuModel()
-                    {
-                        Id = string.IsNullOrEmpty(attr.Id) ? tp.Namespace + tp.Name : attr.Id,
-                        Name = string.IsNullOrEmpty(attr.Name) ? tp.Name : attr.Name,
-                        ShowName = string.IsNullOrEmpty(attr.Name) ? tp.Name : attr.Name,
-                        Category = attr.Category,
-                        Description = attr.Description,
-                        Species = Enums.MenuSpecies.Winform,
-                        Path = System.IO.Path.GetFileName(ass.Location),
-                        NameSpace = tp.Namespace,
-                        ClassName = tp.Name,
-                        State = Enums.MenuState.Normal,
-                        Sort = serial++
-                    };
-                    OrdiVar.Menus.Add(menu);
-                }
+                //var types = ass.GetTypes().Where(c => c.GetCustomAttributes(typeof(MenuAttribute), false).Length > 0);
+                //if (types == null || types.Count() == 0) return;
+
+                //foreach (Type tp in types)
+                //{
+                //    var attr = tp.GetCustomAttributes(typeof(MenuAttribute), false)?[0] as MenuAttribute;
+                //    var menu = new MenuModel()
+                //    {
+                //        Id = string.IsNullOrEmpty(attr.Id) ? tp.Namespace + tp.Name : attr.Id,
+                //        Name = string.IsNullOrEmpty(attr.Name) ? tp.Name : attr.Name,
+                //        ShowName = string.IsNullOrEmpty(attr.Name) ? tp.Name : attr.Name,
+                //        Category = attr.Category,
+                //        About = attr.Description,
+                //        Species = Enums.MenuSpecies.Winform,
+                //        Path = System.IO.Path.GetFileName(ass.Location),
+                //        NameSpace = tp.Namespace,
+                //        ClassName = tp.Name,
+                //        State = Enums.MenuState.Normal,
+                //        Sort = serial++
+                //    };
+                //    OrdiVar.Menus.Add(menu);
+                //}
             }
             AppDomain.Unload(domain);
         }
@@ -95,7 +136,7 @@ namespace Ordi.App.Behavior
                         Id = string.IsNullOrEmpty(attr.Id) ? tp.Namespace + tp.Name : attr.Id,
                         Name = string.IsNullOrEmpty(attr.Name) ? tp.Name : attr.Name,
                         ShowName = string.IsNullOrEmpty(attr.Name) ? tp.Name : attr.Name,
-                        Description = attr.Description,
+                        About = attr.Description,
                         Species = Enums.MenuSpecies.Winform,
                         Path = System.IO.Path.GetFileName(ass.Location),
                         NameSpace = tp.Namespace,

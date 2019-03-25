@@ -202,6 +202,9 @@
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Menus\FmCfgMaintain.resx">
+      <DependentUpon>FmCfgMaintain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Menus\FmMenuMaintain.resx">
       <DependentUpon>FmMenuMaintain.cs</DependentUpon>
     </EmbeddedResource>

@@ -23,12 +23,10 @@ namespace Ordi.App
             AppDomain.CurrentDomain.AssemblyResolve += CurrentDomain_AssemblyResolve;
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             Application.ThreadException += Application_ThreadException;
-            Logs.Debug("事件订阅完成");
             #endregion Event
 
             #region Browser注册
             CefSettingClass.InitializeCefSetting();
-            Logs.Debug("CefSharp初始化");
             #endregion Browser注册
 
             #region Dev皮肤注册
@@ -47,11 +45,13 @@ namespace Ordi.App
             FmLogin fm = new FmLogin();
             if (fm.ShowDialog() == DialogResult.OK)
             {
+                MenuBehavior.InitializeSystemMenu();
                 MenuBehavior.InitializeLocalMenu();
                 Application.Run(new FmMain());
             }
             else
             {
+                MenuBehavior.InitializeSystemMenu();
                 MenuBehavior.InitializeLocalMenu();
                 Application.Run(new FmMain());
             }

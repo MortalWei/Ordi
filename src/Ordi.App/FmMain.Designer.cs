@@ -42,11 +42,11 @@
             this.rpgMaintain = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.RsTip = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.TrTimepiece = new System.Windows.Forms.Timer(this.components);
-            this.documentManager1 = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
-            this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.dmMain = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
+            this.nativeMdiView1 = new DevExpress.XtraBars.Docking2010.Views.NativeMdi.NativeMdiView(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.RcMain)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dmMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nativeMdiView1)).BeginInit();
             this.SuspendLayout();
             // 
             // RcMain
@@ -69,7 +69,7 @@
             this.RcMain.ItemsVertAlign = DevExpress.Utils.VertAlignment.Center;
             this.RcMain.Location = new System.Drawing.Point(0, 0);
             this.RcMain.MaxItemId = 1;
-            this.RcMain.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Never;
+            this.RcMain.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.RcMain.Name = "RcMain";
             this.RcMain.OptionsAnimation.PageCategoryShowAnimation = DevExpress.Utils.DefaultBoolean.False;
             this.RcMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -178,25 +178,18 @@
             this.TrTimepiece.Interval = 1000;
             this.TrTimepiece.Tick += new System.EventHandler(this.TrTimepiece_Tick);
             // 
-            // documentManager1
+            // dmMain
             // 
-            this.documentManager1.MdiParent = this;
-            this.documentManager1.MenuManager = this.RcMain;
-            this.documentManager1.RibbonAndBarsMergeStyle = DevExpress.XtraBars.Docking2010.Views.RibbonAndBarsMergeStyle.Always;
-            this.documentManager1.RightToLeftLayout = DevExpress.Utils.DefaultBoolean.False;
-            this.documentManager1.ShowThumbnailsInTaskBar = DevExpress.Utils.DefaultBoolean.False;
-            this.documentManager1.ShowToolTips = DevExpress.Utils.DefaultBoolean.False;
-            this.documentManager1.View = this.tabbedView1;
-            this.documentManager1.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
-            this.tabbedView1});
-            // 
-            // tabbedView1
-            // 
-            this.tabbedView1.RootContainer.Element = null;
-            this.tabbedView1.UseDocumentSelector = DevExpress.Utils.DefaultBoolean.False;
+            this.dmMain.MdiParent = this;
+            this.dmMain.MenuManager = this.RcMain;
+            this.dmMain.RibbonAndBarsMergeStyle = DevExpress.XtraBars.Docking2010.Views.RibbonAndBarsMergeStyle.Always;
+            this.dmMain.View = this.nativeMdiView1;
+            this.dmMain.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
+            this.nativeMdiView1});
             // 
             // FmMain
             // 
+            this.AllowMdiBar = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(990, 695);
@@ -212,8 +205,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FmMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.RcMain)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.documentManager1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dmMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nativeMdiView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,8 +228,8 @@
         private DevExpress.XtraBars.BarStaticItem BarCompany;
         private DevExpress.XtraBars.Ribbon.RibbonPage RbgMaintain;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup rpgMaintain;
-        private DevExpress.XtraBars.Docking2010.DocumentManager documentManager1;
-        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        private DevExpress.XtraBars.Docking2010.DocumentManager dmMain;
+        private DevExpress.XtraBars.Docking2010.Views.NativeMdi.NativeMdiView nativeMdiView1;
     }
 }
 

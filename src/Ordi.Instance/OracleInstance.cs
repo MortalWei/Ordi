@@ -135,6 +135,7 @@ namespace Ordi
                     {
                         cmd.Parameters.AddRange(dbs);
                         cmd.BindByName = true;
+                        cmd.Prepare();
                     }
                     if (timeOut > 0)
                     {

@@ -29,6 +29,8 @@ namespace Ordi.App
             CefSettingClass.InitializeCefSetting();
             #endregion Browser注册
 
+            Logs.Fatal("Browser注册");
+
             #region Dev皮肤注册
             BonusSkins.Register();
             SkinManager.EnableFormSkins();
@@ -47,13 +49,15 @@ namespace Ordi.App
             {
                 MenuBehavior.InitializeSystemMenu();
                 MenuBehavior.InitializeLocalMenu();
-                Application.Run(new FmMain());
+                //Application.Run(new FmMain());
+                Application.Run(new FmMaintain());
             }
             else
             {
                 MenuBehavior.InitializeSystemMenu();
                 MenuBehavior.InitializeLocalMenu();
-                Application.Run(new FmMain());
+                //Application.Run(new FmMain());
+                Application.Run(new FmMaintain());
             }
             #endregion Login
 

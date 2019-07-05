@@ -1,20 +1,14 @@
-﻿using DevExpress.XtraBars;
-using DevExpress.XtraBars.Docking2010.Views.NativeMdi;
-using DevExpress.XtraBars.Ribbon;
-using DevExpress.XtraEditors;
-using DevExpress.XtraTab;
+﻿using DevExpress.XtraBars.Ribbon;
 using Ordi.App.Menus;
 using Ordi.Utils.Data;
 using Ordi.Utils.Funcs;
 using System;
-using System.Collections.Generic;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace Ordi.App
 {
     /// <summary>
-    /// 主界面
+    /// 业务界面
     /// </summary>
     public partial class FmMain : DevExpress.XtraBars.Ribbon.RibbonForm
     {
@@ -46,66 +40,12 @@ namespace Ordi.App
             //加载配置信息
 
             //加载首页(若有首页)
-
-            FmTest fm = new FmTest
+            FmHome fm = new FmHome
             {
-                MdiParent = this
+                MdiParent = this,
+                WindowState = FormWindowState.Maximized
             };
             fm.Show();
-
-            FmTest2 fm2 = new FmTest2
-            {
-                MdiParent = this
-            };
-            fm2.Show();
-
-
-
-
-
-
-            //FmTest fm = new FmTest();
-
-            //RibbonPage _RibbonPage = new RibbonPage(fm.Text);//创建一个新RibbonPage 
-
-            //FieldInfo[] fi = fm.GetType().GetFields(BindingFlags.NonPublic | BindingFlags.Instance);
-
-            //foreach (FieldInfo pFieldInfo in fi)
-            //{
-            //    if (pFieldInfo.FieldType.Equals(typeof(RibbonControl)))
-            //    {
-            //        try
-            //        {
-            //            RibbonControl ribbon = pFieldInfo.GetValue(fm) as RibbonControl;
-            //            ribbon.Toolbar.ShowCustomizeItem = false;
-            //            ribbon.ShowToolbarCustomizeItem = false;
-            //            _RibbonPage = ribbon.Pages[0];
-            //            _RibbonPage.Text = fm.Text;
-
-            //            this.RcMain.Pages.Add(_RibbonPage);
-            //        }
-            //        catch (Exception ex)
-            //        { throw ex; }
-            //    }
-            //}
-
-            //RcMain.SelectedPage = _RibbonPage;
-
-            //XtraTabPage page = new XtraTabPage()
-            //{
-            //    Text = fm.Text,
-            //};
-
-            //Text = "Ordi-" + fm.Text;
-
-            //fm.TopLevel = false;
-            //fm.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            //fm.Dock = System.Windows.Forms.DockStyle.Fill;
-            //fm.Parent = page;
-            //fm.Show();
-
-            //TabMain.TabPages.Add(page);
-            //TabMain.SelectedTabPage = page;
         }
 
         /// <summary>
@@ -144,17 +84,44 @@ namespace Ordi.App
         /// </summary>
         private void PageSwitch()
         {
-            //if (RcMain.SelectedPage == null) return;
-            //if (RcMain.SelectedPage.Equals(RbgHome))
-            //{
-            //    TabMain.SelectedTabPage = tpHome;
-            //}
-            //else if (RcMain.SelectedPage.Equals(RgMaintain))
-            //{
-            //    TabMain.SelectedTabPage = tpMaintain;
-            //}
+            if (RcMain.SelectedPage == null) return;
+            if (RcMain.SelectedPage.Equals(RbgHome))
+            {
+                var page = nativeMdiView1.Documents.FindFirst(c => c.Control.GetType().Equals(typeof(FmHome)));
+                if (page == null)
+                {
+                    Control control = new FmHome();
+                    nativeMdiView1.AddDocument(control);
+                    nativeMdiView1.ActivateDocument(control);
+                }
+                else
+                {
+                    nativeMdiView1.Controller.Activate(page);
+                }
 
-            //Text = "Ordi-" + RcMain.SelectedPage.Text ?? RcMain.SelectedPage.Name;
+            }
+            else if (RcMain.SelectedPage.Equals(RbgMaintain))
+            {
+                var page = nativeMdiView1.Documents.FindFirst(c => c.Control.GetType().Equals(typeof(FmMaintain)));
+                if (page == null)
+                {
+                    try
+                    {
+                        Control control = new FmMaintain();
+                        nativeMdiView1.AddDocument(control);
+                        nativeMdiView1.ActivateDocument(control);
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+                }
+                else
+                {
+                    nativeMdiView1.Controller.Activate(page);
+                }
+            }
         }
 
         /// <summary>
@@ -244,11 +211,11 @@ namespace Ordi.App
             var _View = dmMain.View as DevExpress.XtraBars.Docking2010.Views.NativeMdi.NativeMdiView;
 
             var _Count = _View.Documents;
-            
-            
+
+
 
             //_View.Controller.Activate(_View.Documents[1]);
-            
+
             //var menu = OrdiVar.Menus.Find(c => c.Id == "41C3D7A9-4274-4C8E-B306-2C6C43133886");
             //if (OrdiVar.OpenedMenus == null) OrdiVar.OpenedMenus = new List<Entities.MenuModel>();
             //OrdiVar.OpenedMenus.Add(menu);

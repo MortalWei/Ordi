@@ -150,6 +150,12 @@
     <Compile Include="FmMain.Designer.cs">
       <DependentUpon>FmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FmMaintain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FmMaintain.Designer.cs">
+      <DependentUpon>FmMaintain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -187,12 +193,6 @@
     <Compile Include="Menus\FmHome.Designer.cs">
       <DependentUpon>FmHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menus\FmMaintain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Menus\FmMaintain.Designer.cs">
-      <DependentUpon>FmMaintain.cs</DependentUpon>
-    </Compile>
     <Compile Include="Menus\FmMenuMaintain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,6 +223,9 @@
     <EmbeddedResource Include="FmMain.resx">
       <DependentUpon>FmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FmMaintain.resx">
+      <DependentUpon>FmMaintain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FmRegister.resx">
       <DependentUpon>FmRegister.cs</DependentUpon>
     </EmbeddedResource>
@@ -243,9 +246,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus\FmHome.resx">
       <DependentUpon>FmHome.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Menus\FmMaintain.resx">
-      <DependentUpon>FmMaintain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus\FmMenuMaintain.resx">
       <DependentUpon>FmMenuMaintain.cs</DependentUpon>

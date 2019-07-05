@@ -83,7 +83,7 @@
             this.RcMain.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Show;
             this.RcMain.ShowQatLocationSelector = false;
             this.RcMain.ShowToolbarCustomizeItem = false;
-            this.RcMain.Size = new System.Drawing.Size(990, 126);
+            this.RcMain.Size = new System.Drawing.Size(790, 126);
             this.RcMain.StatusBar = this.RsTip;
             this.RcMain.Toolbar.ShowCustomizeItem = false;
             this.RcMain.SelectedPageChanging += new DevExpress.XtraBars.Ribbon.RibbonPageChangingEventHandler(this.RcMain_SelectedPageChanging);
@@ -167,10 +167,10 @@
             // 
             this.RsTip.ItemLinks.Add(this.BarTime);
             this.RsTip.ItemLinks.Add(this.BarCompany);
-            this.RsTip.Location = new System.Drawing.Point(0, 664);
+            this.RsTip.Location = new System.Drawing.Point(0, 568);
             this.RsTip.Name = "RsTip";
             this.RsTip.Ribbon = this.RcMain;
-            this.RsTip.Size = new System.Drawing.Size(990, 31);
+            this.RsTip.Size = new System.Drawing.Size(790, 31);
             // 
             // TrTimepiece
             // 
@@ -187,12 +187,22 @@
             this.dmMain.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.nativeMdiView1});
             // 
+            // nativeMdiView1
+            // 
+            this.nativeMdiView1.DocumentProperties.AllowClose = false;
+            this.nativeMdiView1.DocumentProperties.AllowDock = false;
+            this.nativeMdiView1.DocumentProperties.AllowFloat = false;
+            this.nativeMdiView1.DocumentProperties.AllowMaximize = false;
+            this.nativeMdiView1.DocumentProperties.ShowMaximizeButton = false;
+            this.nativeMdiView1.LoadingIndicatorProperties.ShowCaption = false;
+            this.nativeMdiView1.LoadingIndicatorProperties.ShowDescription = false;
+            // 
             // FmMain
             // 
             this.AllowMdiBar = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 695);
+            this.ClientSize = new System.Drawing.Size(790, 599);
             this.Controls.Add(this.RsTip);
             this.Controls.Add(this.RcMain);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

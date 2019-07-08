@@ -207,7 +207,7 @@ namespace Ordi
                         cmd.Prepare();
                     }
 
-                    cmd.ExecuteReader(CommandBehavior.SequentialAccess | CommandBehavior.SingleResult)
+                    //cmd.ExecuteReader(CommandBehavior.SequentialAccess | CommandBehavior.SingleResult)
                     OracleDataAdapter adapter = new OracleDataAdapter(cmd);
 
                     DataSet result = new DataSet();

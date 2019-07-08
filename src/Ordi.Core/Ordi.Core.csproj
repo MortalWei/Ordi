@@ -45,6 +45,8 @@
     <Compile Include="Attributes\DataFieldAttribute.cs" />
     <Compile Include="Attributes\MenuAttribute.cs" />
     <Compile Include="Attributes\PluginAttribute.cs" />
+    <Compile Include="Convert\ObjectProperty.cs" />
+    <Compile Include="Convert\OrdiConvert.cs" />
     <Compile Include="Entities\StaffModel.cs" />
     <Compile Include="Enums\SexCode.cs" />
     <Compile Include="Files\OrdiFile.cs" />

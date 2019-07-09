@@ -82,6 +82,10 @@
       <Project>{B60FCB00-75D6-4CC6-B341-20208BAA640B}</Project>
       <Name>Ordi.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Ordi.Instance\Ordi.Instance.csproj">
+      <Project>{25f90109-f133-49f6-a53e-8f53a913a0b3}</Project>
+      <Name>Ordi.Instance</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Ordi.Windows\Ordi.Windows.csproj">
       <Project>{11A02BBB-561D-4CCE-89C4-0B93C6D63C8B}</Project>
       <Name>Ordi.Windows</Name>
@@ -98,6 +102,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

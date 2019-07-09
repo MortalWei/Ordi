@@ -28,5 +28,10 @@ namespace Ordi.App.Test.Utils
         {
             User.AllInt = dd;
         }
+
+        void eee(string name)
+        {
+            User.SexCode = (Sex)Enum.Parse(typeof(Sex), name);
+        }
     }
 }

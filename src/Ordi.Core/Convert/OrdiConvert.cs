@@ -8,30 +8,73 @@ using System.Text;
 
 namespace Ordi
 {
-    public class OrdiConvert
+    public static class OrdiConvert
     {
-        public delegate void PropertySetter(object instance, object val);
-        //public static PropertySetter CreateSetter(PropertyInfo property)
-        //{
-        //    var type = property.DeclaringType;
-        //    var dm = new DynamicMethod("", null, new[] { typeof(object), typeof(object) }, type);
-        //    //=== IL ===
-        //    var il = dm.GetILGenerator();
-        //    il.Emit(OpCodes.Ldarg_0);
-        //    il.Emit(OpCodes.Ldarg_1);
-        //    if (property.PropertyType.IsValueType)//判断属性类型是否是值类型
-        //    {
-        //        il.Emit(OpCodes.Unbox, property.PropertyType);//如果是值类型就拆箱
-        //    }
-        //    else
-        //    {
-        //        il.Emit(OpCodes.Castclass, property.PropertyType);//否则强转
-        //    }
-        //    il.Emit(OpCodes.Callvirt, property.GetSetMethod());
-        //    il.Emit(OpCodes.Ret);
-        //    //=== IL ===
-        //    return (PropertySetter)dm.CreateDelegate(typeof(PropertySetter));
-        //}
+        public static List<T> ToList<T>(this DataSet ds) where T : new()
+        {
+            return ds.Tables[0].ToList<T>();
+        }
+
+        public static List<T> ToList<T>(this DataTable dataTable) where T : new()
+        {
+            List<T> list = new List<T>(dataTable.Rows.Count);
+            foreach (DataRow row in dataTable.Rows)
+            {
+                list.Add(row.ToEntity<T>());
+            }
+            return list;
+        }
+
+        public static T ToEntity<T>(this DataRow row) where T : new()
+        {
+            var prop = ObjectProperty.GetProperties(typeof(T));
+            var cols = row.Table.Columns;
+            T m = new T();
+            foreach (var p in prop)
+            {
+                if (cols.Contains(p.Info.Name))
+                {
+                    var val = row[p.Info.Name];
+                    if ((val is DBNull) == false)
+                    {
+                        p.Setter(m, val);
+                    }
+                }
+            }
+            return m;
+        }
+
+        public static List<T> ToList<T>(this IDataReader reader) where T : new()
+        {
+            var prop = ObjectProperty.GetProperties(typeof(T));
+            List<T> list = new List<T>();
+
+            List<string> cols = new List<string>(reader.FieldCount);
+            for (int i = 0; i < reader.FieldCount; i++)
+            {
+                cols.Add(reader.GetName(i));
+            }
+
+            while (reader.Read())
+            {
+                T m = new T();
+                foreach (var p in prop)
+                {
+                    if (cols.Contains(p.Info.Name))
+                    {
+                        var val = reader[p.Info.Name];
+                        if ((val is DBNull) == false)
+                        {
+                            p.Setter(m, val);
+                        }
+                    }
+                }
+                list.Add(m);
+            }
+
+            return list;
+        }
+
         public static List<T> ConvertToModels<T>(DataSet ds) where T : new()
         {
             var prop = ObjectProperty.GetProperties(typeof(T));

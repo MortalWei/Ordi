@@ -11,7 +11,7 @@ namespace Ordi
     /// <summary>
     /// 脚本执行库
     /// </summary>
-    internal interface IExecuteScalar
+    public interface IExecuteScalar
     {
         /// <summary>
         /// 执行查询,并返回结果集中第一行第一列的值

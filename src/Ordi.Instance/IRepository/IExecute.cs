@@ -6,7 +6,7 @@ namespace Ordi
     /// <summary>
     /// 执行脚本库
     /// </summary>
-    internal interface IExecute
+    public interface IExecute
     {
         /// <summary>
         /// 执行脚本,并返回受影响行数

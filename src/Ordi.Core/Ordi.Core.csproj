@@ -47,6 +47,7 @@
     <Compile Include="Attributes\PluginAttribute.cs" />
     <Compile Include="Convert\ObjectProperty.cs" />
     <Compile Include="Convert\OrdiConvert.cs" />
+    <Compile Include="ReflectionDelegate.cs" />
     <Compile Include="Entities\StaffModel.cs" />
     <Compile Include="Enums\SexCode.cs" />
     <Compile Include="Files\OrdiFile.cs" />

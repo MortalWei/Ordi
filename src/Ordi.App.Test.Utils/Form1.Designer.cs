@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
+            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.button2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -41,14 +44,37 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // textEdit1
+            // 
+            this.textEdit1.EditValue = "USER ID=LENOVO_CIS;PASSWORD=CIS123456;DATA SOURCE=(DESCRIPTION =(ADDRESS_LIST = (" +
+    "ADDRESS = (PROTOCOL = TCP)(HOST =172.30.99.2)(PORT = 1521)))(CONNECT_DATA =(SERV" +
+    "ICE_NAME = ORCL)))";
+            this.textEdit1.Location = new System.Drawing.Point(93, 12);
+            this.textEdit1.Name = "textEdit1";
+            this.textEdit1.Size = new System.Drawing.Size(695, 20);
+            this.textEdit1.TabIndex = 1;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(93, 38);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "连接";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textEdit1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -56,5 +82,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
+        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private System.Windows.Forms.Button button2;
     }
 }

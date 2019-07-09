@@ -7,7 +7,7 @@ namespace Ordi.App.Test.Utils
 {
     public class User
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         public string Name { get; set; }
 
@@ -33,6 +33,8 @@ namespace Ordi.App.Test.Utils
         public Sex SexCode { get; set; }
 
         public int? AllInt { get; set; }
+
+        public Role RoleCode { get; set; }
     }
 
     public enum Sex
@@ -40,5 +42,21 @@ namespace Ordi.App.Test.Utils
         男 = 1,
         女 = 2,
         未知 = 9
+    }
+
+    [Flags]
+    public enum Role
+    {
+        管理员 = 1,
+        医师 = 2,
+        护士 = 4,
+        行政 = 8
+    }
+
+    public class MortalLog
+    {
+        public string Id { get; set; }
+        public string Content { get; set; }
+        public DateTime? CreationDate { get; set; }
     }
 }

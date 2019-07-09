@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Ordi;
 
 namespace Ordi.App.Test.Utils
 {
     public partial class Form1 : Form
     {
+        private IDBInstance Instance { get; set; }
+
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +17,8 @@ namespace Ordi.App.Test.Utils
         {
             var ds = GetDataSet("");
 
-            var list = OrdiConvert.ConvertToModels<User>(ds);
+            var list2 = OrdiConvert.ConvertToModels<User>(ds);
+            var list = ds.ToList<User>();
         }
 
         public DataSet GetDataSet(string sql)
@@ -33,15 +30,25 @@ namespace Ordi.App.Test.Utils
             table.Columns.Add("Uid", typeof(Guid));
             table.Columns.Add("Time", typeof(DateTime));
             table.Columns.Add("多出来的属性", typeof(string));
-            //table.Columns.Add("SexCode", typeof(int));
+            table.Columns.Add("SexCode", typeof(int));
+            table.Columns.Add("Age", typeof(byte));
+            table.Columns.Add("RoleCode", typeof(int));
             for (int i = 0; i < 50000; i++)
             {
-                table.Rows.Add(i, "blqw" + i, true, Guid.NewGuid(), DateTime.Now, "多余的"/*, i % 4 == 0 ? 1 : 2*/);
+                table.Rows.Add(i, "blqw" + i, true, Guid.NewGuid(), DateTime.Now, "多余的", i % 4 == 0 ? 1 : 3, i % 3 == 0 ? 18 : 22, i % 5 == 0 ? 3 : 5);
             }
 
             DataSet ds = new DataSet();
             ds.Tables.Add(table);
             return ds;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (Instance == null)
+                Instance = new OracleInstance("Mortal");
+
+            var list = Instance.Query<MortalLog>("SELECT T1.ID \"Id\", T1.CONTENT \"Content\", T1.CREATION_DATE \"CreationDate\" FROM MORTAL_LOG T1");
         }
     }
 }

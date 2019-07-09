@@ -5,7 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Data.Common;
 using System.Text;
-using Dapper;
+//using Dapper;
 
 namespace Ordi
 {
@@ -222,34 +222,67 @@ namespace Ordi
             }
         }
 
-        public IEnumerable<T> Query<T>(string sqlStr)
+        public IEnumerable<T> Query<T>(string sqlStr) where T : new()
         {
             return Query<T>(sqlStr, null, CommandType.Text, 0);
         }
 
-        public IEnumerable<T> Query<T>(string sqlStr, int timeOut)
+        public IEnumerable<T> Query<T>(string sqlStr, int timeOut) where T : new()
         {
             return Query<T>(sqlStr, null, CommandType.Text, timeOut);
         }
 
-        public IEnumerable<T> Query<T>(string sqlStr, DbParameter[] dbs)
+        public IEnumerable<T> Query<T>(string sqlStr, DbParameter[] dbs) where T : new()
         {
             return Query<T>(sqlStr, dbs, CommandType.Text, 0);
         }
 
-        public IEnumerable<T> Query<T>(string sqlStr, DbParameter[] dbs, int timeOut)
+        public IEnumerable<T> Query<T>(string sqlStr, DbParameter[] dbs, int timeOut) where T : new()
         {
             return Query<T>(sqlStr, dbs, CommandType.Text, timeOut);
         }
 
-        public IEnumerable<T> Query<T>(string sqlStr, DbParameter[] dbs, CommandType commandType)
+        public IEnumerable<T> Query<T>(string sqlStr, DbParameter[] dbs, CommandType commandType) where T : new()
         {
             return Query<T>(sqlStr, dbs, commandType, 0);
         }
 
-        public IEnumerable<T> Query<T>(string sqlStr, DbParameter[] dbs, CommandType commandType, int timeOut)
+        public IEnumerable<T> Query<T>(string sqlStr, DbParameter[] dbs, CommandType commandType, int timeOut) where T : new()
         {
-            throw new NotImplementedException();
+            try
+            {
+                using (var conn = new OracleConnection(ConnStr))
+                {
+                    conn.Open();
+                    var cmd = conn.CreateCommand();
+                    cmd.CommandType = commandType;
+                    cmd.CommandText = sqlStr;
+                    cmd.CommandTimeout = timeOut;
+                    if (dbs != null)
+                    {
+                        cmd.Parameters.AddRange(dbs);
+                        cmd.BindByName = true;
+                        cmd.Prepare();
+                    }
+
+                    var reader = cmd.ExecuteReader();
+                    return reader.ToList<T>();
+
+                    //cmd.ExecuteReader(CommandBehavior.SequentialAccess | CommandBehavior.SingleResult)
+                    //OracleDataAdapter adapter = new OracleDataAdapter(cmd);
+
+                    //DataSet result = new DataSet();
+                    //adapter.Fill(result);
+
+                    //if (result == null || result.Tables.Count == 0) return default(List<T>);
+                    //return result.ToList<T>();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logs.Error(ex.Message, ex);
+                return null;
+            }
         }
         #endregion Query
     }

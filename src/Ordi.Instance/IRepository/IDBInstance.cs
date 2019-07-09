@@ -9,7 +9,7 @@ namespace Ordi
     /// <summary>
     /// DB访问实例
     /// </summary>
-    internal interface IDBInstance : IExecute, IExecuteScalar, IQuery
+    public interface IDBInstance : IExecute, IExecuteScalar, IQuery
     {
     }
 }

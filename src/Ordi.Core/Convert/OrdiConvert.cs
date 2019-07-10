@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Text;
 
 namespace Ordi
 {
@@ -32,12 +28,12 @@ namespace Ordi
             T m = new T();
             foreach (var p in prop)
             {
-                if (cols.Contains(p.Info.Name))
+                if (cols.Contains(p.Item1))
                 {
-                    var val = row[p.Info.Name];
-                    if ((val is DBNull) == false)
+                    var val = row[p.Item1];
+                    if (!(val is DBNull))
                     {
-                        p.Setter(m, val);
+                        p.Item2.Setter(m, val);
                     }
                 }
             }
@@ -60,13 +56,21 @@ namespace Ordi
                 T m = new T();
                 foreach (var p in prop)
                 {
-                    if (cols.Contains(p.Info.Name))
+                    try
                     {
-                        var val = reader[p.Info.Name];
-                        if ((val is DBNull) == false)
+                        if (cols.Contains(p.Item1))
                         {
-                            p.Setter(m, val);
+                            var val = reader[p.Item1];
+                            if (!(val is DBNull))
+                            {
+                                p.Item2.Setter(m, val);
+                            }
                         }
+                    }
+                    catch (Exception ex)
+                    {
+
+                        throw;
                     }
                 }
                 list.Add(m);
@@ -85,12 +89,12 @@ namespace Ordi
                 T m = new T();
                 foreach (var p in prop)
                 {
-                    if (cols.Contains(p.Info.Name))
+                    if (cols.Contains(p.Item1))
                     {
-                        var val = row[p.Info.Name];
+                        var val = row[p.Item1];
                         if ((val is DBNull) == false)
                         {
-                            p.Setter(m, val);
+                            p.Item2.Setter(m, val);
                         }
                     }
                 }

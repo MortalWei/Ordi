@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Ordi.Attributes;
+using System;
 
 namespace Ordi.App.Test.Utils
 {
@@ -55,8 +53,12 @@ namespace Ordi.App.Test.Utils
 
     public class MortalLog
     {
+        [DataField("ID")]
         public string Id { get; set; }
+        [DataField("CONTENT")]
         public string Content { get; set; }
+        //[DataField("CREATION_DATE")]
         public DateTime? CreationDate { get; set; }
+        public string Remark { get; set; }
     }
 }

@@ -30,7 +30,7 @@ namespace Ordi.App.Test.Utils
             table.Columns.Add("Uid", typeof(Guid));
             table.Columns.Add("Time", typeof(DateTime));
             table.Columns.Add("多出来的属性", typeof(string));
-            table.Columns.Add("SexCode", typeof(int));
+            table.Columns.Add("SexCode", typeof(decimal));
             table.Columns.Add("Age", typeof(byte));
             table.Columns.Add("RoleCode", typeof(int));
             for (int i = 0; i < 50000; i++)
@@ -48,7 +48,9 @@ namespace Ordi.App.Test.Utils
             if (Instance == null)
                 Instance = new OracleInstance("Mortal");
 
-            var list = Instance.Query<MortalLog>("SELECT T1.ID \"Id\", T1.CONTENT \"Content\", T1.CREATION_DATE \"CreationDate\" FROM MORTAL_LOG T1");
+            //var list = Instance.Query<MortalLog>("SELECT T1.ID \"Id\", T1.CONTENT \"Content\", T1.CREATION_DATE \"CreationDate\" FROM MORTAL_LOG T1");
+            //var list = Instance.Query<MortalLog>("SELECT * FROM MORTAL_LOG");
+            var list = Instance.Query<PatientInfo>("SELECT * FROM CIS_PATIENT_INFO");
         }
     }
 }

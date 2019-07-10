@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.Common;
-using System.Text;
-//using Dapper;
 
 namespace Ordi
 {
@@ -267,15 +265,6 @@ namespace Ordi
 
                     var reader = cmd.ExecuteReader();
                     return reader.ToList<T>();
-
-                    //cmd.ExecuteReader(CommandBehavior.SequentialAccess | CommandBehavior.SingleResult)
-                    //OracleDataAdapter adapter = new OracleDataAdapter(cmd);
-
-                    //DataSet result = new DataSet();
-                    //adapter.Fill(result);
-
-                    //if (result == null || result.Tables.Count == 0) return default(List<T>);
-                    //return result.ToList<T>();
                 }
             }
             catch (Exception ex)

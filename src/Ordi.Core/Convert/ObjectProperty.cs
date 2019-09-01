@@ -133,7 +133,7 @@ namespace Ordi
                 var cur = Nullable.GetUnderlyingType(property.PropertyType);
 
                 ConvertMethods.TryGetValue(cur ?? property.PropertyType, out MethodInfo info);
-                
+
                 if (info != null)
                 {
                     il.Emit(OpCodes.Call, ConvertMethods[cur == null ? property.PropertyType : cur]);

@@ -68,9 +68,9 @@
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)Ordi
-copy $(TargetDir)NLog.config $(SolutionDir)Ordi\Settings
-copy $(TargetPath) $(SolutionDir)OrdiService
-copy $(TargetDir)NLog.config $(SolutionDir)OrdiService\Settings</PostBuildEvent>
+    <PostBuildEvent>xcopy /e /r /y $(TargetPath) $(SolutionDir)Ordi
+xcopy /e /r /y $(TargetDir)NLog.config $(SolutionDir)Ordi\Settings
+xcopy /e /r /y $(TargetPath) $(SolutionDir)OrdiService
+xcopy /e /r /y $(TargetDir)NLog.config $(SolutionDir)OrdiService\Settings</PostBuildEvent>
   </PropertyGroup>
 </Project>

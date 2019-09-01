@@ -307,8 +307,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)Ordi
-copy $(TargetDir)Ordi.App.exe.config $(SolutionDir)Ordi</PostBuildEvent>
+    <PostBuildEvent>xcopy /e /r /y $(TargetPath) $(SolutionDir)Ordi
+xcopy /e /r /y $(TargetDir)Ordi.App.exe.config $(SolutionDir)Ordi</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">

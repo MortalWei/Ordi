@@ -19,7 +19,6 @@ namespace Ordi.Files
         /// </summary>
         public static List<FileInfo> LibFiles { get; private set; }
 
-
         /// <summary>
         /// 获取文件列表
         /// </summary>

@@ -4,6 +4,7 @@ using OrdiOwin.Core.Filters;
 using OrdiOwin.Core.Settings;
 using Autofac.Integration.WebApi;
 using System;
+using System.Linq;
 using System.Globalization;
 using System.IO;
 using System.Reflection;
@@ -30,8 +31,8 @@ namespace OrdiOwin.Core
             var options = new StartOptions();
             options.Urls.Add("http://localhost:8080");
             options.Urls.Add("http://127.0.0.1:8080");
-#if RELEASE
-            options.Url.Add("http://*:8080");
+#if !DEBUG
+            options.Urls.Add("http://*:8080");
 #endif
             return options;
         }
@@ -58,9 +59,17 @@ namespace OrdiOwin.Core
 
             var builder = new ContainerBuilder();
             //builder.RegisterApiControllers(Assembly.GetExecutingAssembly());
+            //var types = config.Services.GetAssembliesResolver().GetAssemblies().SelectMany(c => c.GetTypes());
+            //var type = typeof(ApiController);
+            //var list = types.Where(c => type.IsAssignableFrom(type) && c.IsClass && !c.IsAbstract);
+            //builder.RegisterApiControllers(list.ToArray());
+
+            //var assemblies = config.Services.GetAssembliesResolver().GetAssemblies();
+
             foreach (var item in config.Services.GetAssembliesResolver().GetAssemblies())
             {
-                builder.RegisterApiControllers(item);
+                if (item.FullName.IndexOf(".Controller", StringComparison.OrdinalIgnoreCase) > -1)
+                    builder.RegisterApiControllers(item);
             }
 
             //builder.RegisterApiControllers(config.Services.GetAssembliesResolver().GetAssemblies())
@@ -69,6 +78,8 @@ namespace OrdiOwin.Core
             //    .AsWebApiActionFilterFor<TestController>()
             //    .InstancePerRequest();
             builder.Register(c => new Logger()).As<ILogger>().InstancePerRequest();
+            //builder.Register(c=>c.)
+
 
             // Create and assign a dependency resolver for Web API to use.
             var container = builder.Build();

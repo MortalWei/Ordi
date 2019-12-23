@@ -250,7 +250,6 @@
     <EmbeddedResource Include="Menus\FmMenuMaintain.resx">
       <DependentUpon>FmMenuMaintain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -307,8 +306,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /e /r /y $(TargetPath) $(SolutionDir)Ordi
-xcopy /e /r /y $(TargetDir)Ordi.App.exe.config $(SolutionDir)Ordi</PostBuildEvent>
+    <PostBuildEvent>xcopy /e /r /y $(TargetPath) $(SolutionDir)Ordi\
+xcopy /e /r /y $(TargetDir)Ordi.App.exe.config $(SolutionDir)Ordi\</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.14\tools\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureBclBuildImported" BeforeTargets="BeforeBuild" Condition="'$(BclBuildImported)' == ''">

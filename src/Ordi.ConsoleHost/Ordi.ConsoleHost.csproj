@@ -68,7 +68,7 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /e /r /y $(TargetPath) $(SolutionDir)OrdiService
-xcopy /e /r /y $(TargetDir)OrdiService.exe.config $(SolutionDir)OrdiService</PostBuildEvent>
+    <PostBuildEvent>xcopy /e /r /y $(TargetPath) $(SolutionDir)OrdiService\
+xcopy /e /r /y $(TargetDir)OrdiService.exe.config $(SolutionDir)OrdiService\</PostBuildEvent>
   </PropertyGroup>
 </Project>

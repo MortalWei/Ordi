@@ -51,6 +51,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy /e /r /y $(TargetPath) $(SolutionDir)Ordi</PostBuildEvent>
+    <PostBuildEvent>xcopy /e /r /y $(TargetPath) $(SolutionDir)Ordi\</PostBuildEvent>
   </PropertyGroup>
 </Project>
